@@ -1,11 +1,11 @@
-User-agent: *
-Disallow: /Analisis/
-Disallow: /*.xls$
-Disallow: /2010/
-Disallow: /Sicia/
-Disallow: /Sicia2/
-Disallow: /SiciaAnt/
-Disallow: /Sicia
-Disallow: Sicia
-# Allow: /
-
+User-agent: *
+Disallow: /Analisis/
+Disallow: /*.xls$
+Disallow: /2010/
+Disallow: /Sicia/
+Disallow: /Sicia2/
+Disallow: /SiciaAnt/
+Disallow: /Sicia
+Disallow: Sicia
+# Allow: /
+

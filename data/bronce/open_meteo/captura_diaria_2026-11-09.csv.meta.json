@@ -3,7 +3,7 @@
   "ruta_relativa": "data/bronce/open_meteo/captura_diaria_2026-11-09.csv",
   "fuente": "Open-Meteo Forecast & Recent Days API",
   "url_origen": "https://api.open-meteo.com/v1/forecast",
-  "capturado_en_utc": "2026-11-09T22:27:16.937243+00:00",
+  "capturado_en_utc": "2026-11-09T22:36:16.513253+00:00",
   "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
   "formato": "csv",
   "tamano_bytes": 6375,
