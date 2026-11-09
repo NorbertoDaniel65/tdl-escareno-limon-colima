@@ -1,0 +1,5 @@
+numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_origen,descripcion
+1,2026-11-03,interfaz,codigo,pruebas,20,,Subdominio JSON archive-api.open-meteo.com declara Disallow / para buscadores web; se agrego bandera explicita es_api_rest en ExtractorEtico manteniendo rate-limit y archivo de robots.txt
+2,2026-11-04,datos,diseno,revision,15,,Desfase de zona horaria entre timestamps UTC de la API meteorologica y corte diario local CST (America/Mexico_City) en agregacion mensual
+3,2026-11-06,funcion,codigo,pruebas,12,2,"Calculo de Grados-Dia de Desarrollo (GDD base 13C) generaba valores negativos en dias frescos de invierno en Colima capital; se acoto con max(0.0, t_media - 13.0)"
+4,2026-11-08,verificacion,pruebas,pruebas,10,,Validacion SHA-256 fallaba en Windows por conversion automatica CRLF; se estandarizo escritura de CSV con encoding UTF-8 y atributos binarios en Git

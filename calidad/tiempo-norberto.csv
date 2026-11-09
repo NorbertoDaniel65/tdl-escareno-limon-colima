@@ -1,0 +1,7 @@
+fecha,inicio,fin,interrupcion_min,fase,actividad
+2026-11-02,16:00,17:30,10,planeacion,Definicion de vertical agroclimatica del limon en Colima y diseno de las 3 preguntas analiticas (E1-E3)
+2026-11-03,18:00,19:45,15,diseno,Entrevista de campo con actor del sector citricola y analisis legal de robots.txt y terminos de uso (SNIIM y Open-Meteo)
+2026-11-04,17:00,19:15,10,codigo,Implementacion de ExtractorEtico en extractores/base.py con control de pausa >= 1.5s y backoff exponencial con SHA-256
+2026-11-05,16:30,18:45,5,codigo,Desarrollo de extractores open_meteo.py y sniim_limon.py y descarga de series historicas de 60 meses en Capa Bronce
+2026-11-07,11:00,12:30,0,pruebas,Construccion de suite pytest y script verificador determinista pipeline/verificar_e0.py
+2026-11-09,14:00,16:15,10,revision,Configuracion de GitHub Actions (captura-bronce.yml) y redaccion de propuesta.md y ENTREGA.md con etiqueta e0
