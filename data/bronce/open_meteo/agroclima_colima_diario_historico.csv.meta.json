@@ -1,0 +1,16 @@
+{
+  "archivo": "agroclima_colima_diario_historico.csv",
+  "ruta_relativa": "data/bronce/open_meteo/agroclima_colima_diario_historico.csv",
+  "fuente": "Open-Meteo Historical Weather API (ERA5-Land)",
+  "url_origen": "https://archive-api.open-meteo.com/v1/archive",
+  "capturado_en_utc": "2026-11-09T22:27:10.737628+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "csv",
+  "tamano_bytes": 999035,
+  "sha256": "a8e5f5c699898e47fbb50c3fc6af023519244d3e1f1a9879e0a64189ad0488cc",
+  "registros": 7304,
+  "periodos_temporales": 1826,
+  "datos_personales_incluidos": false,
+  "licencia": "CC BY 4.0 (Open-Meteo / Copernicus ERA5)",
+  "notas": "Serie diaria de 4 municipios citrícolas de Colima (2021-01-01 a 2025-12-31)."
+}

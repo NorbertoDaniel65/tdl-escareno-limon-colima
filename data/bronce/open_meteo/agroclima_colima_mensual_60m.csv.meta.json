@@ -1,0 +1,16 @@
+{
+  "archivo": "agroclima_colima_mensual_60m.csv",
+  "ruta_relativa": "data/bronce/open_meteo/agroclima_colima_mensual_60m.csv",
+  "fuente": "Open-Meteo Historical Weather API (Agregado Mensual)",
+  "url_origen": "https://archive-api.open-meteo.com/v1/archive",
+  "capturado_en_utc": "2026-11-09T22:27:10.740162+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "csv",
+  "tamano_bytes": 24008,
+  "sha256": "6aad451dfcd2d2f033352a9a6182fac3800a818bc3b92fb2baa73cc7bd2ae240",
+  "registros": 240,
+  "periodos_temporales": 60,
+  "datos_personales_incluidos": false,
+  "licencia": "CC BY 4.0 (Open-Meteo / Copernicus ERA5)",
+  "notas": "Serie histórica mensual con 60 periodos (>=36 requeridos en E0) para los 4 municipios."
+}

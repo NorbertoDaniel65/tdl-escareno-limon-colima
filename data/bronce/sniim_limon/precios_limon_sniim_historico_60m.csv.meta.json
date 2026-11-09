@@ -1,0 +1,16 @@
+{
+  "archivo": "precios_limon_sniim_historico_60m.csv",
+  "ruta_relativa": "data/bronce/sniim_limon/precios_limon_sniim_historico_60m.csv",
+  "fuente": "SNIIM - Secretaría de Economía (Mercados Nacionales Frutas y Hortalizas)",
+  "url_origen": "http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFrutasYHortalizas.aspx",
+  "capturado_en_utc": "2026-11-09T22:27:10.757455+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "csv",
+  "tamano_bytes": 65444,
+  "sha256": "7dde14cf7f818a89294b73c91a15647315794c91ef7021c29fb276edd598adc2",
+  "registros": 240,
+  "periodos_temporales": 60,
+  "datos_personales_incluidos": false,
+  "licencia": "Datos Abiertos Gobierno de México (Libre Uso con Atribución)",
+  "notas": "Serie histórica de 60 meses (60 periodos >= 36 requeridos) en 4 mercados nacionales para Limón con semilla #5 origen Colima."
+}
