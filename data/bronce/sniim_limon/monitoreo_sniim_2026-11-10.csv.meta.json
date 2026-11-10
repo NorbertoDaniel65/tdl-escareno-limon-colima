@@ -1,0 +1,16 @@
+{
+  "archivo": "monitoreo_sniim_2026-11-10.csv",
+  "ruta_relativa": "data/bronce/sniim_limon/monitoreo_sniim_2026-11-10.csv",
+  "fuente": "SNIIM - Secretaría de Economía (Monitoreo Ético)",
+  "url_origen": "http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFrutasYHortalizas.aspx",
+  "capturado_en_utc": "2026-11-10T19:10:55.022080+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "csv",
+  "tamano_bytes": 5180,
+  "sha256": "a00e6eacba3930622688a1a956812b85ab436ccebd37ae3a953e565b998c6a8e",
+  "registros": 16,
+  "periodos_temporales": 4,
+  "datos_personales_incluidos": false,
+  "licencia": "Datos Abiertos Gobierno de México",
+  "notas": "HTTP 200 OK desde http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFrutasYHortalizas.aspx (67142 bytes, 498 opciones en formulario)."
+}
