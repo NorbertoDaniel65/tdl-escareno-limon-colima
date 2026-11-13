@@ -2,6 +2,6 @@
   "dominio": "api.open-meteo.com",
   "robots_url": "https://api.open-meteo.com/robots.txt",
   "http_status": 200,
-  "verificado_utc": "2026-11-11T19:07:08.919890+00:00",
+  "verificado_utc": "2026-11-13T19:02:51.981258+00:00",
   "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)"
 }

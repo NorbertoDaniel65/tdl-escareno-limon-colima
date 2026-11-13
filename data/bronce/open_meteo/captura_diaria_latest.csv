@@ -1,57 +1,57 @@
 fecha_captura_utc,fecha_observacion,tipo_registro,id_municipio,municipio,zona,temp_max_c,temp_min_c,temp_media_c,precipitacion_mm,evapotranspiracion_et0_mm,viento_max_kmh,radiacion_solar_mj_m2
-2026-11-11,2026-11-04,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.2,25.5,27.6,0.0,3.84,11.4,19.34
-2026-11-11,2026-11-05,observado_reciente,06009,Tecoman,Valle Citricola Sur,29.9,25.1,27.5,1.4,3.57,8.7,17.99
-2026-11-11,2026-11-06,observado_reciente,06009,Tecoman,Valle Citricola Sur,29.8,24.4,27.2,0.4,3.58,18.0,18.19
-2026-11-11,2026-11-07,observado_reciente,06009,Tecoman,Valle Citricola Sur,29.6,23.8,27.0,0.1,3.56,12.0,18.27
-2026-11-11,2026-11-08,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.2,23.8,26.8,1.2,3.61,12.0,18.23
-2026-11-11,2026-11-09,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.0,23.3,26.6,0.0,3.55,11.5,17.54
-2026-11-11,2026-11-10,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.5,23.6,26.8,0.0,3.87,12.4,19.54
-2026-11-11,2026-11-11,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.4,23.7,26.7,0.0,3.56,11.3,17.76
-2026-11-11,2026-11-12,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,29.6,23.7,26.5,0.0,3.06,11.3,14.87
-2026-11-11,2026-11-13,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,29.5,23.9,26.5,0.5,3.7,10.8,18.87
-2026-11-11,2026-11-14,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,29.1,21.7,25.5,0.0,3.85,11.3,19.45
-2026-11-11,2026-11-15,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,28.4,20.6,24.7,0.0,3.83,10.2,19.81
-2026-11-11,2026-11-16,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,28.1,19.1,23.8,0.0,3.81,8.7,19.58
-2026-11-11,2026-11-17,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,29.2,21.1,25.2,0.0,3.68,8.0,18.56
-2026-11-11,2026-11-04,observado_reciente,06001,Armeria,Corredor Costero,31.0,24.8,27.3,0.0,3.84,11.2,19.09
-2026-11-11,2026-11-05,observado_reciente,06001,Armeria,Corredor Costero,31.0,24.3,27.1,2.2,3.52,9.2,17.53
-2026-11-11,2026-11-06,observado_reciente,06001,Armeria,Corredor Costero,30.2,23.8,26.8,0.8,3.54,13.6,17.72
-2026-11-11,2026-11-07,observado_reciente,06001,Armeria,Corredor Costero,30.4,22.8,26.5,0.3,3.56,11.5,18.1
-2026-11-11,2026-11-08,observado_reciente,06001,Armeria,Corredor Costero,31.2,22.6,26.4,1.8,3.61,12.6,18.18
-2026-11-11,2026-11-09,observado_reciente,06001,Armeria,Corredor Costero,30.9,22.2,26.2,0.0,3.5,11.6,17.26
-2026-11-11,2026-11-10,observado_reciente,06001,Armeria,Corredor Costero,31.9,23.0,26.6,0.0,3.93,10.6,19.46
-2026-11-11,2026-11-11,observado_reciente,06001,Armeria,Corredor Costero,31.8,22.8,26.3,0.0,3.6,10.9,17.49
-2026-11-11,2026-11-12,pronostico_meteorologico,06001,Armeria,Corredor Costero,30.7,23.1,26.2,0.0,3.03,11.3,14.53
-2026-11-11,2026-11-13,pronostico_meteorologico,06001,Armeria,Corredor Costero,30.1,22.9,26.0,1.8,3.71,10.5,18.69
-2026-11-11,2026-11-14,pronostico_meteorologico,06001,Armeria,Corredor Costero,29.9,20.9,25.0,0.0,3.85,11.5,19.38
-2026-11-11,2026-11-15,pronostico_meteorologico,06001,Armeria,Corredor Costero,28.9,19.8,24.3,0.0,3.86,10.5,19.85
-2026-11-11,2026-11-16,pronostico_meteorologico,06001,Armeria,Corredor Costero,28.6,18.2,23.4,0.0,3.84,11.5,19.62
-2026-11-11,2026-11-17,pronostico_meteorologico,06001,Armeria,Corredor Costero,30.1,20.1,24.8,0.0,3.7,8.3,18.58
-2026-11-11,2026-11-04,observado_reciente,06007,Manzanillo,Costa Portuaria,30.4,25.8,27.8,0.0,3.92,8.6,18.99
-2026-11-11,2026-11-05,observado_reciente,06007,Manzanillo,Costa Portuaria,30.4,25.4,27.7,0.1,3.7,8.4,18.05
-2026-11-11,2026-11-06,observado_reciente,06007,Manzanillo,Costa Portuaria,30.7,24.5,27.4,0.0,3.92,15.5,18.75
-2026-11-11,2026-11-07,observado_reciente,06007,Manzanillo,Costa Portuaria,29.9,24.3,27.1,0.1,3.69,9.6,18.49
-2026-11-11,2026-11-08,observado_reciente,06007,Manzanillo,Costa Portuaria,30.5,23.9,27.2,0.7,3.77,8.7,18.04
-2026-11-11,2026-11-09,observado_reciente,06007,Manzanillo,Costa Portuaria,30.4,23.6,26.8,0.0,3.71,8.8,17.38
-2026-11-11,2026-11-10,observado_reciente,06007,Manzanillo,Costa Portuaria,30.7,24.0,27.2,0.0,4.06,8.1,19.3
-2026-11-11,2026-11-11,observado_reciente,06007,Manzanillo,Costa Portuaria,30.4,24.5,27.0,0.0,3.4,6.8,16.01
-2026-11-11,2026-11-12,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,30.2,24.2,27.0,0.0,2.95,7.1,13.19
-2026-11-11,2026-11-13,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,30.3,24.1,26.9,0.0,3.86,8.5,18.44
-2026-11-11,2026-11-14,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.5,22.9,26.0,0.0,3.94,7.9,19.11
-2026-11-11,2026-11-15,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.4,22.4,25.7,0.0,4.0,8.5,19.53
-2026-11-11,2026-11-16,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.1,21.4,25.0,0.0,4.01,10.1,19.1
-2026-11-11,2026-11-17,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.6,22.0,25.5,0.0,3.69,7.3,18.02
-2026-11-11,2026-11-04,observado_reciente,06002,Colima,Valle Central,30.1,23.9,26.0,1.0,3.67,12.7,18.02
-2026-11-11,2026-11-05,observado_reciente,06002,Colima,Valle Central,30.1,23.3,26.0,0.3,3.64,11.2,17.87
-2026-11-11,2026-11-06,observado_reciente,06002,Colima,Valle Central,30.2,22.6,25.8,0.0,3.69,9.5,18.18
-2026-11-11,2026-11-07,observado_reciente,06002,Colima,Valle Central,30.0,21.4,25.2,2.2,3.75,12.8,18.73
-2026-11-11,2026-11-08,observado_reciente,06002,Colima,Valle Central,30.4,21.3,24.9,1.3,3.74,13.8,18.73
-2026-11-11,2026-11-09,observado_reciente,06002,Colima,Valle Central,29.7,21.0,25.0,0.0,3.53,8.1,17.24
-2026-11-11,2026-11-10,observado_reciente,06002,Colima,Valle Central,31.6,21.6,25.9,0.0,4.1,11.7,19.42
-2026-11-11,2026-11-11,observado_reciente,06002,Colima,Valle Central,30.6,21.8,25.4,0.0,3.23,12.3,14.73
-2026-11-11,2026-11-12,pronostico_meteorologico,06002,Colima,Valle Central,30.1,22.5,25.2,0.1,2.8,12.4,12.35
-2026-11-11,2026-11-13,pronostico_meteorologico,06002,Colima,Valle Central,29.6,21.4,24.8,3.1,3.65,14.6,17.7
-2026-11-11,2026-11-14,pronostico_meteorologico,06002,Colima,Valle Central,29.3,19.3,23.7,0.0,3.92,13.5,19.48
-2026-11-11,2026-11-15,pronostico_meteorologico,06002,Colima,Valle Central,30.1,19.2,23.8,0.0,4.02,13.9,19.97
-2026-11-11,2026-11-16,pronostico_meteorologico,06002,Colima,Valle Central,30.7,17.8,23.2,0.0,4.17,11.6,19.52
-2026-11-11,2026-11-17,pronostico_meteorologico,06002,Colima,Valle Central,30.5,20.4,24.5,0.0,3.92,9.2,18.04
+2026-11-13,2026-11-06,observado_reciente,06009,Tecoman,Valle Citricola Sur,29.8,24.4,27.2,0.4,3.58,18.0,18.19
+2026-11-13,2026-11-07,observado_reciente,06009,Tecoman,Valle Citricola Sur,29.6,23.8,27.0,0.1,3.56,12.0,18.27
+2026-11-13,2026-11-08,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.2,23.8,26.8,1.2,3.61,12.0,18.23
+2026-11-13,2026-11-09,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.0,23.3,26.6,0.0,3.55,11.5,17.54
+2026-11-13,2026-11-10,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.5,23.6,26.8,0.0,3.87,12.4,19.54
+2026-11-13,2026-11-11,observado_reciente,06009,Tecoman,Valle Citricola Sur,31.1,23.6,26.8,0.0,3.46,12.5,17.22
+2026-11-13,2026-11-12,observado_reciente,06009,Tecoman,Valle Citricola Sur,30.1,24.5,27.1,0.0,3.09,11.2,15.04
+2026-11-13,2026-11-13,observado_reciente,06009,Tecoman,Valle Citricola Sur,29.6,24.1,26.8,0.0,3.26,9.1,16.09
+2026-11-13,2026-11-14,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,29.4,22.1,25.9,0.6,3.84,10.7,19.29
+2026-11-13,2026-11-15,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,28.5,21.5,25.2,0.0,3.76,10.3,19.47
+2026-11-13,2026-11-16,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,28.5,20.4,24.5,0.0,3.55,10.5,18.2
+2026-11-13,2026-11-17,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,29.3,20.8,25.0,0.0,3.73,10.2,18.89
+2026-11-13,2026-11-18,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,29.7,21.9,25.9,0.0,2.97,9.7,13.81
+2026-11-13,2026-11-19,pronostico_meteorologico,06009,Tecoman,Valle Citricola Sur,30.0,23.1,26.3,0.0,3.55,8.3,17.32
+2026-11-13,2026-11-06,observado_reciente,06001,Armeria,Corredor Costero,30.2,23.8,26.8,0.8,3.54,13.6,17.72
+2026-11-13,2026-11-07,observado_reciente,06001,Armeria,Corredor Costero,30.4,22.8,26.5,0.3,3.56,11.5,18.1
+2026-11-13,2026-11-08,observado_reciente,06001,Armeria,Corredor Costero,31.2,22.6,26.4,1.8,3.61,12.6,18.18
+2026-11-13,2026-11-09,observado_reciente,06001,Armeria,Corredor Costero,30.9,22.2,26.2,0.0,3.5,11.6,17.26
+2026-11-13,2026-11-10,observado_reciente,06001,Armeria,Corredor Costero,31.9,23.0,26.6,0.0,3.93,10.6,19.46
+2026-11-13,2026-11-11,observado_reciente,06001,Armeria,Corredor Costero,32.3,22.7,26.5,0.0,3.58,12.0,17.32
+2026-11-13,2026-11-12,observado_reciente,06001,Armeria,Corredor Costero,31.3,23.8,26.8,0.0,3.08,11.5,14.84
+2026-11-13,2026-11-13,observado_reciente,06001,Armeria,Corredor Costero,29.7,22.9,26.2,1.3,3.21,8.6,15.99
+2026-11-13,2026-11-14,pronostico_meteorologico,06001,Armeria,Corredor Costero,30.0,20.9,25.3,0.2,3.86,10.9,19.36
+2026-11-13,2026-11-15,pronostico_meteorologico,06001,Armeria,Corredor Costero,29.1,20.8,24.8,0.0,3.81,10.6,19.46
+2026-11-13,2026-11-16,pronostico_meteorologico,06001,Armeria,Corredor Costero,29.5,19.3,24.1,0.0,3.56,11.3,18.09
+2026-11-13,2026-11-17,pronostico_meteorologico,06001,Armeria,Corredor Costero,29.9,20.0,24.6,0.0,3.75,10.0,18.9
+2026-11-13,2026-11-18,pronostico_meteorologico,06001,Armeria,Corredor Costero,30.6,20.9,25.5,0.0,2.9,9.4,13.47
+2026-11-13,2026-11-19,pronostico_meteorologico,06001,Armeria,Corredor Costero,30.7,22.2,25.8,0.0,3.44,8.2,16.8
+2026-11-13,2026-11-06,observado_reciente,06007,Manzanillo,Costa Portuaria,30.7,24.5,27.4,0.0,3.92,15.5,18.75
+2026-11-13,2026-11-07,observado_reciente,06007,Manzanillo,Costa Portuaria,29.9,24.3,27.1,0.1,3.69,9.6,18.49
+2026-11-13,2026-11-08,observado_reciente,06007,Manzanillo,Costa Portuaria,30.5,23.9,27.2,0.7,3.77,8.7,18.04
+2026-11-13,2026-11-09,observado_reciente,06007,Manzanillo,Costa Portuaria,30.4,23.6,26.8,0.0,3.71,8.8,17.38
+2026-11-13,2026-11-10,observado_reciente,06007,Manzanillo,Costa Portuaria,30.7,24.0,27.2,0.0,4.06,8.1,19.3
+2026-11-13,2026-11-11,observado_reciente,06007,Manzanillo,Costa Portuaria,30.2,24.5,27.1,0.0,3.31,7.8,15.74
+2026-11-13,2026-11-12,observado_reciente,06007,Manzanillo,Costa Portuaria,30.1,24.7,27.3,0.0,3.04,8.1,13.74
+2026-11-13,2026-11-13,observado_reciente,06007,Manzanillo,Costa Portuaria,30.2,24.5,27.1,0.0,3.46,9.8,16.29
+2026-11-13,2026-11-14,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.9,22.8,26.1,0.0,4.03,8.6,19.22
+2026-11-13,2026-11-15,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.4,22.4,25.6,0.0,3.92,8.0,19.22
+2026-11-13,2026-11-16,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.8,21.7,25.3,0.0,3.77,8.5,18.0
+2026-11-13,2026-11-17,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,29.5,21.9,25.6,0.0,3.93,7.4,18.78
+2026-11-13,2026-11-18,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,30.4,23.1,26.6,0.0,3.06,7.4,12.84
+2026-11-13,2026-11-19,pronostico_meteorologico,06007,Manzanillo,Costa Portuaria,30.8,23.4,26.9,0.0,3.88,7.5,17.95
+2026-11-13,2026-11-06,observado_reciente,06002,Colima,Valle Central,30.2,22.6,25.8,0.0,3.69,9.5,18.18
+2026-11-13,2026-11-07,observado_reciente,06002,Colima,Valle Central,30.0,21.4,25.2,2.2,3.75,12.8,18.73
+2026-11-13,2026-11-08,observado_reciente,06002,Colima,Valle Central,30.4,21.3,24.9,1.3,3.74,13.8,18.73
+2026-11-13,2026-11-09,observado_reciente,06002,Colima,Valle Central,29.7,21.0,25.0,0.0,3.53,8.1,17.24
+2026-11-13,2026-11-10,observado_reciente,06002,Colima,Valle Central,31.6,21.6,25.9,0.0,4.1,11.7,19.42
+2026-11-13,2026-11-11,observado_reciente,06002,Colima,Valle Central,31.0,20.8,25.5,0.5,3.3,13.5,15.0
+2026-11-13,2026-11-12,observado_reciente,06002,Colima,Valle Central,30.2,21.8,25.6,0.5,2.74,9.3,12.41
+2026-11-13,2026-11-13,observado_reciente,06002,Colima,Valle Central,29.6,21.9,24.9,0.6,3.37,11.4,16.2
+2026-11-13,2026-11-14,pronostico_meteorologico,06002,Colima,Valle Central,29.5,19.8,24.0,0.0,3.93,13.5,19.13
+2026-11-13,2026-11-15,pronostico_meteorologico,06002,Colima,Valle Central,29.6,20.0,24.2,0.0,3.91,12.0,19.0
+2026-11-13,2026-11-16,pronostico_meteorologico,06002,Colima,Valle Central,30.9,19.1,24.0,0.0,3.84,12.7,18.13
+2026-11-13,2026-11-17,pronostico_meteorologico,06002,Colima,Valle Central,30.4,19.2,24.3,0.0,4.08,11.3,18.81
+2026-11-13,2026-11-18,pronostico_meteorologico,06002,Colima,Valle Central,31.2,20.3,25.0,0.3,2.9,8.1,12.84
+2026-11-13,2026-11-19,pronostico_meteorologico,06002,Colima,Valle Central,31.2,22.0,25.8,0.0,3.9,8.5,17.67
