@@ -1,0 +1,42 @@
+name: CI Calidad y Puerta de Datos (E1)
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'e*' ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar-calidad-e1:
+    name: Puerta de Calidad, Pruebas Pytest y Verificador E1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Instalar dependencias del proyecto
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ejecutar Puerta de Calidad Automática y Pipeline Plata/Oro
+        run: |
+          python -m pipeline.puerta_calidad
+          python -m pipeline.verificar_e0
+          python -m pipeline.verificar_e1
+
+      - name: Ejecutar Suite Completa de Pruebas Automatizadas (E0 + E1)
+        run: |
+          pytest -v

@@ -1,0 +1,136 @@
+{
+  "timestamp_ejecucion_utc": "2026-11-13T20:15:26.858358+00:00",
+  "motor_validacion": "Pandera DataFrameSchema + Reglas de Dominio Citrícola (RN-01 a RN-04)",
+  "politica_rechazo": "Cero eliminación silenciosa: todo registro rechazado se preserva en data/cuarentena/ con motivo y severidad.",
+  "resumen_clima_diario": {
+    "registros_evaluados_bronce": 7310,
+    "registros_aprobados_plata": 7304,
+    "registros_en_cuarentena": 6,
+    "tasa_aprobacion_pct": 99.92
+  },
+  "resumen_sniim_mensual": {
+    "registros_evaluados_bronce": 245,
+    "registros_aprobados_plata": 240,
+    "registros_en_cuarentena": 5,
+    "tasa_aprobacion_pct": 97.96
+  },
+  "snapshots_operativos_github_actions": {
+    "archivos_validados": 4,
+    "registros_totales_snapshots": 224,
+    "estado": "100% VALIDOS"
+  },
+  "desglose_reglas_violadas": {
+    "RN-01_COHERENCIA_TERMICA": 1,
+    "RANGO_TEMP_MAX; RN-01_COHERENCIA_TERMICA": 1,
+    "RANGO_PRECIPITACION": 1,
+    "RN-04_CATALOGO_MUNICIPIO": 1,
+    "RN-03_BALANCE_HIDRICO": 1,
+    "UNICIDAD_PK_CLIMA": 1,
+    "RN-02_ORDEN_PRECIOS": 1,
+    "RANGO_PRECIO_MIN": 1,
+    "RANGO_VOLUMEN_TON": 1,
+    "RN-04_CATALOGO_MERCADO": 1,
+    "UNICIDAD_PK_SNIIM": 1
+  },
+  "registros_cuarentena": [
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "open_meteo_clima_diario",
+      "llave_primaria": "2023-06-15|6009",
+      "regla_violada": "RN-01_COHERENCIA_TERMICA",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "Inversión térmica inválida: Tmax=24.0, Tmed=27.2, Tmin=31.5"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "open_meteo_clima_diario",
+      "llave_primaria": "2024-02-10|6001",
+      "regla_violada": "RANGO_TEMP_MAX; RN-01_COHERENCIA_TERMICA",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "temp_max_c=-99.9 fuera de rango físico [10.0, 50.0] °C; Inversión térmica inválida: Tmax=-99.9, Tmed=24.8, Tmin=18.5"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "open_meteo_clima_diario",
+      "llave_primaria": "2023-09-18|6007",
+      "regla_violada": "RANGO_PRECIPITACION",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "precipitacion_mm=-14.5 fuera de rango [0.0, 600.0] mm"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "open_meteo_clima_diario",
+      "llave_primaria": "2025-05-20|6999",
+      "regla_violada": "RN-04_CATALOGO_MUNICIPIO",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "id_municipio=6999 fuera del catálogo Colima [6001, 6002, 6007, 6009]"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "open_meteo_clima_diario",
+      "llave_primaria": "2024-08-12|6002",
+      "regla_violada": "RN-03_BALANCE_HIDRICO",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "Discrepancia en balance_hidrico_mm (-45.0) vs P-ET0 (7.50)"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "open_meteo_clima_diario",
+      "llave_primaria": "2025-12-31|6002",
+      "regla_violada": "UNICIDAD_PK_CLIMA",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "Llave primaria duplicada (fecha=2025-12-31, id_municipio=6002)"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "sniim_precios_mensual",
+      "llave_primaria": "2023-04|MKT-COL",
+      "regla_violada": "RN-02_ORDEN_PRECIOS",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "Inversión de cotización mayorista: Pmin=38.5, Pfrec=26.0, Pmax=31.0"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "sniim_precios_mensual",
+      "llave_primaria": "2024-07|MKT-GDL",
+      "regla_violada": "RANGO_PRECIO_MIN",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "precio_min_mxn_kg=-15.0 fuera de rango válido [2.0, 110.0] MXN/kg"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "sniim_precios_mensual",
+      "llave_primaria": "2025-02|MKT-CDMX",
+      "regla_violada": "RANGO_VOLUMEN_TON",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "volumen_comercializado_ton=0 inválido (debe ser > 0 y <= 50,000 ton)"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "sniim_precios_mensual",
+      "llave_primaria": "2025-10|MKT-TIJ-NO-AUTORIZADO",
+      "regla_violada": "RN-04_CATALOGO_MERCADO",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "id_mercado=MKT-TIJ-NO-AUTORIZADO no pertenece al catálogo autorizado ['MKT-CDMX', 'MKT-COL', 'MKT-GDL', 'MKT-MTY']"
+    },
+    {
+      "timestamp_cuarentena_utc": "2026-11-13T20:15:26.858358+00:00",
+      "tabla_origen": "sniim_precios_mensual",
+      "llave_primaria": "2025-12|MKT-MTY",
+      "regla_violada": "UNICIDAD_PK_SNIIM",
+      "severidad": "ALTA",
+      "accion_puerta": "ENVIADO_A_CUARENTENA",
+      "motivo_rechazo": "Llave primaria duplicada (anio_mes=2025-12, id_mercado=MKT-MTY)"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+tabla,variable,orig_media,orig_std,orig_min,orig_max,minmax_media,minmax_std,minmax_rango,zscore_media,zscore_std,zscore_rango,recomendacion_uso
+agroclima_mensual,temp_max_promedio_c,30.645,1.526,27.23,35.9,0.3938,0.176,"[0.00, 1.00]",0.0,1.0021,"[-2.24, 3.45]","Z-Score para modelos lineales/correlación; Min-Max para índices compuestos [0,1]"
+agroclima_mensual,precipitacion_acum_mm,93.251,132.229,0.0,600.4,0.1553,0.2202,"[0.00, 1.00]",0.0,1.0021,"[-0.71, 3.84]","Z-Score para modelos lineales/correlación; Min-Max para índices compuestos [0,1]"
+agroclima_mensual,evapotranspiracion_acum_mm,134.33,23.108,102.94,200.3,0.3224,0.2373,"[0.00, 1.00]",-0.0,1.0021,"[-1.36, 2.86]","Z-Score para modelos lineales/correlación; Min-Max para índices compuestos [0,1]"
+agroclima_mensual,deficit_hidrico_acum_mm,-41.079,141.647,-200.3,479.82,0.2341,0.2083,"[0.00, 1.00]",0.0,1.0021,"[-1.13, 3.69]","Z-Score para modelos lineales/correlación; Min-Max para índices compuestos [0,1]"
+precios_sniim,precio_frecuente_mxn_kg,31.74,12.157,11.68,81.94,0.2855,0.173,"[0.00, 1.00]",0.0,1.0021,"[-1.65, 4.14]",Z-Score conserva magnitud de choques (>3 sigma); Min-Max se comprime por picos de 2022
+precios_sniim,volumen_comercializado_ton,4039.438,1074.942,2149.0,6306.0,0.4548,0.2586,"[0.00, 1.00]",-0.0,1.0021,"[-1.76, 2.11]",Z-Score conserva magnitud de choques (>3 sigma); Min-Max se comprime por picos de 2022

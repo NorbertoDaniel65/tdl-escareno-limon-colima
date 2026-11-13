@@ -1,0 +1,5 @@
+id_modelo,modelo,parametros_justificados,AIC_train,MAE_test_mxn_kg,RMSE_test_mxn_kg,MAPE_test_pct,ranking_error_prueba,seleccionado
+M4_SARIMA,"4. SARIMA(1,1,0)(1,1,0)_12 [log]","Orden (1, 1, 0)x(1, 1, 0, 12) seleccionado por ACF/PACF (lag 1 y lag 12) y menor AIC=-51.76",-51.76,0.8905,1.2286,3.04,1,True
+M3_HOLT_WINTERS,"3. Holt-Winters Estacional (m=12, Multiplicativo)","alpha=1.000, gamma=0.000, m=12",119.31,2.1875,3.6435,6.66,2,False
+M1_SES,1. Suavizamiento Exponencial Simple (SES),alpha=1.000 (sin tendencia ni estacionalidad),169.95,5.7233,6.8379,21.74,3,False
+M2_HOLT,2. Método de Holt (Tendencia Lineal),"alpha=0.65, beta=0.18 (tendencia lineal sin estacionalidad)",202.54,6.4274,7.4672,24.22,4,False

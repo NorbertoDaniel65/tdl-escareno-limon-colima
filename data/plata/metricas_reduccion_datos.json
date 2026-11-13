@@ -1,0 +1,35 @@
+{
+  "etapa_1_agregacion_temporal_clima": {
+    "registros_diarios_bronce_validos": 7304,
+    "celdas_totales_diarias": 124168,
+    "registros_mensuales_plata": 240,
+    "reduccion_filas_pct": 96.71,
+    "informacion_conservada": "Tendencia térmica mensual, precipitación y déficit hídrico acumulados, extremos de viento y conteo de días con estrés térmico >= 35°C.",
+    "informacion_perdida": "Variabilidad intradiaria/sinóptica de alta frecuencia (horaria o de días aislados sin impacto fenológico mensual)."
+  },
+  "etapa_2_consolidacion_regional_oro": {
+    "registros_panel_plata_combinado": 480,
+    "registros_serie_maestra_oro": 60,
+    "reduccion_filas_panel_a_oro_pct": 87.5
+  },
+  "etapa_3_seleccion_caracteristicas": {
+    "variables_brutas_totales": 32,
+    "variables_nucleo_analitico_oro": 18,
+    "colinealidades_eliminadas": [
+      {
+        "par_colineal": "temp_media_c vs gdd_acumulado_mes",
+        "correlacion_pearson_r": 0.9809,
+        "decision": "Se conserva temp_max_promedio_c y gdd_acumulado_mes en panel; se descarta duplicidad lineal en regresores."
+      },
+      {
+        "par_colineal": "precipitacion_acum_mm vs deficit_hidrico_acum_mm",
+        "correlacion_pearson_r": 0.9881,
+        "decision": "deficit_hidrico_acum_mm integra precipitación y demanda evaporativa (ET0), reteniendo 96.8% de la varianza hídrica explicativa."
+      },
+      {
+        "par_colineal": "metadatos_estaticos (fuente_api, origen_producto, unidad)",
+        "decision": "Trasladados al diccionario de datos y archivos .meta.json para reducir dimensionalidad tabular."
+      }
+    ]
+  }
+}

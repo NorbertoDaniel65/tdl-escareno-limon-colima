@@ -1,0 +1,29 @@
+variable_climatica,descripcion,rezago_meses_k,correlacion_cruzada_r,p_valor,umbral_ic95,significativa_95pct
+deficit_hidrico_tecoman_mm,Déficit Hídrico Acumulado en Tecomán (mm),0,-0.5702,0.0,0.253,True
+deficit_hidrico_tecoman_mm,Déficit Hídrico Acumulado en Tecomán (mm),1,-0.4859,0.0001,0.253,True
+deficit_hidrico_tecoman_mm,Déficit Hídrico Acumulado en Tecomán (mm),2,-0.3247,0.01289,0.253,True
+deficit_hidrico_tecoman_mm,Déficit Hídrico Acumulado en Tecomán (mm),3,-0.1211,0.36963,0.253,False
+deficit_hidrico_tecoman_mm,Déficit Hídrico Acumulado en Tecomán (mm),4,0.1417,0.29762,0.253,False
+deficit_hidrico_tecoman_mm,Déficit Hídrico Acumulado en Tecomán (mm),5,0.4314,0.00101,0.253,True
+deficit_hidrico_tecoman_mm,Déficit Hídrico Acumulado en Tecomán (mm),6,0.641,0.0,0.253,True
+precipitacion_tecoman_mm,Precipitación Acumulada en Tecomán (mm),0,-0.5579,0.0,0.253,True
+precipitacion_tecoman_mm,Precipitación Acumulada en Tecomán (mm),1,-0.5429,1e-05,0.253,True
+precipitacion_tecoman_mm,Precipitación Acumulada en Tecomán (mm),2,-0.4308,0.00074,0.253,True
+precipitacion_tecoman_mm,Precipitación Acumulada en Tecomán (mm),3,-0.2381,0.07447,0.253,False
+precipitacion_tecoman_mm,Precipitación Acumulada en Tecomán (mm),4,0.0454,0.73998,0.253,False
+precipitacion_tecoman_mm,Precipitación Acumulada en Tecomán (mm),5,0.3739,0.00493,0.253,True
+precipitacion_tecoman_mm,Precipitación Acumulada en Tecomán (mm),6,0.6335,0.0,0.253,True
+temp_max_tecoman_c,Temperatura Máxima Media en Tecomán (°C),0,-0.6053,0.0,0.253,True
+temp_max_tecoman_c,Temperatura Máxima Media en Tecomán (°C),1,-0.5277,2e-05,0.253,True
+temp_max_tecoman_c,Temperatura Máxima Media en Tecomán (°C),2,-0.3213,0.01393,0.253,True
+temp_max_tecoman_c,Temperatura Máxima Media en Tecomán (°C),3,0.0242,0.85797,0.253,False
+temp_max_tecoman_c,Temperatura Máxima Media en Tecomán (°C),4,0.2812,0.0358,0.253,True
+temp_max_tecoman_c,Temperatura Máxima Media en Tecomán (°C),5,0.397,0.00269,0.253,True
+temp_max_tecoman_c,Temperatura Máxima Media en Tecomán (°C),6,0.4658,0.00039,0.253,True
+et0_tecoman_mm,Evapotranspiración Potencial ET0 en Tecomán (mm),0,0.2725,0.03516,0.253,True
+et0_tecoman_mm,Evapotranspiración Potencial ET0 en Tecomán (mm),1,-0.1718,0.19319,0.253,False
+et0_tecoman_mm,Evapotranspiración Potencial ET0 en Tecomán (mm),2,-0.5258,2e-05,0.253,True
+et0_tecoman_mm,Evapotranspiración Potencial ET0 en Tecomán (mm),3,-0.6718,0.0,0.253,True
+et0_tecoman_mm,Evapotranspiración Potencial ET0 en Tecomán (mm),4,-0.6382,0.0,0.253,True
+et0_tecoman_mm,Evapotranspiración Potencial ET0 en Tecomán (mm),5,-0.5095,7e-05,0.253,True
+et0_tecoman_mm,Evapotranspiración Potencial ET0 en Tecomán (mm),6,-0.2844,0.03713,0.253,True

@@ -7,7 +7,7 @@
 - **Asignaturas:**
   - **Ingeniería de Datos (`CMD-2602`):** Mtro. Armando Román Gallardo Heredia (`armando.gallardo@colima.tecnm.mx`)
   - **Análisis Estadístico para Ciencia de Datos:** Mtro. Mónico Joel Sánchez Velasco (`joel.sanchez@colima.tecnm.mx`)
-- **Estado actual:** **Entrega `E0` completada y verificada** (Etiqueta: [`e0`](docs/E0/ENTREGA.md)).
+- **Estado actual:** **Entregas `E0` y `E1` completadas y verificadas** (Etiquetas: [`e0`](docs/E0/ENTREGA.md) · [`e1`](docs/E1/ENTREGA.md)).
 
 ---
 
@@ -69,14 +69,17 @@ git clone https://github.com/NorbertoDaniel65/tdl-escareno-limon-colima.git
 cd tdl-escareno-limon-colima
 pip install -r requirements.txt
 
-# 2. Verificar automáticamente el cumplimiento íntegro de la Entrega E0
+# 2. Verificar automáticamente el cumplimiento íntegro de las Entregas E0 y E1
 python -m pipeline.verificar_e0
+python -m pipeline.series_tiempo_e1
+python -m pipeline.verificar_e1
 
-# 3. Ejecutar pruebas unitarias
-pytest -v
+# 3. Ejecutar pruebas unitarias (19 pruebas E0 + E1)
+python -m pytest -v
 
-# 4. Ejecutar captura diaria en Capa Bronce
+# 4. Ejecutar captura diaria en Capa Bronce o abrir Tablero E1
 python -m extractores.ejecutar_captura --modo diario
+streamlit run tablero/app.py
 ```
 
 ---

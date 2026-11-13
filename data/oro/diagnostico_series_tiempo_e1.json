@@ -1,0 +1,470 @@
+{
+  "serie_analizada": "precio_frecuente_origen_colima_mxn_kg",
+  "cobertura_temporal": "2021-01 a 2025-12 (60 meses)",
+  "particion_entrenamiento": "2021-01 a 2024-12 (48 meses)",
+  "particion_prueba": "2025-01 a 2025-12 (12 meses)",
+  "justificacion_descomposicion": {
+    "modelo_seleccionado": "Multiplicativo (Y_t = T_t * S_t * R_t)",
+    "indice_estacional_max_feb": 1.6396,
+    "indice_estacional_min_jul": 0.6517,
+    "amplitud_estacional_relativa_pct": 98.79,
+    "razon_varianza_residuos_add": 4.622,
+    "razon_varianza_residuos_mul": 3.582,
+    "explicacion": "La amplitud estacional del precio del limón escala proporcionalmente con el nivel medio de la serie: en el pico inflacionario/fitosanitario de febrero 2022 la brecha invierno-verano superó 25 MXN/kg, mientras que en años normales ronda 14-16 MXN/kg. El esquema multiplicativo estabiliza la varianza residual y expresa la estacionalidad como multiplicadores porcentuales (+55.4% en febrero, -25.8% en julio-agosto)."
+  },
+  "pruebas_estacionariedad_adf": [
+    {
+      "serie_evaluada": "Nivel original Y_t (Precio Limón Colima MXN/kg)",
+      "estadistico_adf": -3.9439,
+      "p_valor": 0.001735,
+      "lags_usados": 7,
+      "n_obs": 52,
+      "valor_critico_1pct": -3.5629,
+      "valor_critico_5pct": -2.919,
+      "valor_critico_10pct": -2.5974,
+      "es_estacionaria_al_5pct": true,
+      "conclusion": "Rechaza H0 (Raíz Unitaria) -> Serie ESTACIONARIA"
+    },
+    {
+      "serie_evaluada": "Primera diferencia regular ΔY_t = Y_t - Y_{t-1}",
+      "estadistico_adf": -5.8982,
+      "p_valor": 0.0,
+      "lags_usados": 9,
+      "n_obs": 49,
+      "valor_critico_1pct": -3.5715,
+      "valor_critico_5pct": -2.9226,
+      "valor_critico_10pct": -2.5993,
+      "es_estacionaria_al_5pct": true,
+      "conclusion": "Rechaza H0 (Raíz Unitaria) -> Serie ESTACIONARIA"
+    },
+    {
+      "serie_evaluada": "Diferencia estacional Δ_12 Y_t = Y_t - Y_{t-12}",
+      "estadistico_adf": -5.1863,
+      "p_valor": 9e-06,
+      "lags_usados": 10,
+      "n_obs": 37,
+      "valor_critico_1pct": -3.6209,
+      "valor_critico_5pct": -2.9435,
+      "valor_critico_10pct": -2.6104,
+      "es_estacionaria_al_5pct": true,
+      "conclusion": "Rechaza H0 (Raíz Unitaria) -> Serie ESTACIONARIA"
+    }
+  ],
+  "acf_lags_0_12": [
+    1.0,
+    0.7883,
+    0.3744,
+    -0.0223,
+    -0.3195,
+    -0.5013,
+    -0.5601,
+    -0.5065,
+    -0.3456,
+    -0.0935,
+    0.1992,
+    0.4575,
+    0.5603
+  ],
+  "pacf_lags_0_12": [
+    1.0,
+    0.7883,
+    -0.6522,
+    0.0194,
+    -0.2386,
+    -0.1704,
+    -0.1269,
+    -0.1338,
+    0.0169,
+    0.0914,
+    0.1402,
+    0.1645,
+    -0.1231
+  ],
+  "correlacion_cruzada_destacada": [
+    {
+      "variable_climatica": "deficit_hidrico_tecoman_mm",
+      "descripcion": "Déficit Hídrico Acumulado en Tecomán (mm)",
+      "rezago_meses_k": 0,
+      "correlacion_cruzada_r": -0.5702,
+      "p_valor": 0.0,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "deficit_hidrico_tecoman_mm",
+      "descripcion": "Déficit Hídrico Acumulado en Tecomán (mm)",
+      "rezago_meses_k": 1,
+      "correlacion_cruzada_r": -0.4859,
+      "p_valor": 0.0001,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "deficit_hidrico_tecoman_mm",
+      "descripcion": "Déficit Hídrico Acumulado en Tecomán (mm)",
+      "rezago_meses_k": 2,
+      "correlacion_cruzada_r": -0.3247,
+      "p_valor": 0.01289,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "deficit_hidrico_tecoman_mm",
+      "descripcion": "Déficit Hídrico Acumulado en Tecomán (mm)",
+      "rezago_meses_k": 5,
+      "correlacion_cruzada_r": 0.4314,
+      "p_valor": 0.00101,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "deficit_hidrico_tecoman_mm",
+      "descripcion": "Déficit Hídrico Acumulado en Tecomán (mm)",
+      "rezago_meses_k": 6,
+      "correlacion_cruzada_r": 0.641,
+      "p_valor": 0.0,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "precipitacion_tecoman_mm",
+      "descripcion": "Precipitación Acumulada en Tecomán (mm)",
+      "rezago_meses_k": 0,
+      "correlacion_cruzada_r": -0.5579,
+      "p_valor": 0.0,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "precipitacion_tecoman_mm",
+      "descripcion": "Precipitación Acumulada en Tecomán (mm)",
+      "rezago_meses_k": 1,
+      "correlacion_cruzada_r": -0.5429,
+      "p_valor": 1e-05,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "precipitacion_tecoman_mm",
+      "descripcion": "Precipitación Acumulada en Tecomán (mm)",
+      "rezago_meses_k": 2,
+      "correlacion_cruzada_r": -0.4308,
+      "p_valor": 0.00074,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "precipitacion_tecoman_mm",
+      "descripcion": "Precipitación Acumulada en Tecomán (mm)",
+      "rezago_meses_k": 5,
+      "correlacion_cruzada_r": 0.3739,
+      "p_valor": 0.00493,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "precipitacion_tecoman_mm",
+      "descripcion": "Precipitación Acumulada en Tecomán (mm)",
+      "rezago_meses_k": 6,
+      "correlacion_cruzada_r": 0.6335,
+      "p_valor": 0.0,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "temp_max_tecoman_c",
+      "descripcion": "Temperatura Máxima Media en Tecomán (°C)",
+      "rezago_meses_k": 0,
+      "correlacion_cruzada_r": -0.6053,
+      "p_valor": 0.0,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "temp_max_tecoman_c",
+      "descripcion": "Temperatura Máxima Media en Tecomán (°C)",
+      "rezago_meses_k": 1,
+      "correlacion_cruzada_r": -0.5277,
+      "p_valor": 2e-05,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "temp_max_tecoman_c",
+      "descripcion": "Temperatura Máxima Media en Tecomán (°C)",
+      "rezago_meses_k": 2,
+      "correlacion_cruzada_r": -0.3213,
+      "p_valor": 0.01393,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "temp_max_tecoman_c",
+      "descripcion": "Temperatura Máxima Media en Tecomán (°C)",
+      "rezago_meses_k": 4,
+      "correlacion_cruzada_r": 0.2812,
+      "p_valor": 0.0358,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "temp_max_tecoman_c",
+      "descripcion": "Temperatura Máxima Media en Tecomán (°C)",
+      "rezago_meses_k": 5,
+      "correlacion_cruzada_r": 0.397,
+      "p_valor": 0.00269,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "temp_max_tecoman_c",
+      "descripcion": "Temperatura Máxima Media en Tecomán (°C)",
+      "rezago_meses_k": 6,
+      "correlacion_cruzada_r": 0.4658,
+      "p_valor": 0.00039,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "et0_tecoman_mm",
+      "descripcion": "Evapotranspiración Potencial ET0 en Tecomán (mm)",
+      "rezago_meses_k": 0,
+      "correlacion_cruzada_r": 0.2725,
+      "p_valor": 0.03516,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "et0_tecoman_mm",
+      "descripcion": "Evapotranspiración Potencial ET0 en Tecomán (mm)",
+      "rezago_meses_k": 2,
+      "correlacion_cruzada_r": -0.5258,
+      "p_valor": 2e-05,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "et0_tecoman_mm",
+      "descripcion": "Evapotranspiración Potencial ET0 en Tecomán (mm)",
+      "rezago_meses_k": 3,
+      "correlacion_cruzada_r": -0.6718,
+      "p_valor": 0.0,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "et0_tecoman_mm",
+      "descripcion": "Evapotranspiración Potencial ET0 en Tecomán (mm)",
+      "rezago_meses_k": 4,
+      "correlacion_cruzada_r": -0.6382,
+      "p_valor": 0.0,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "et0_tecoman_mm",
+      "descripcion": "Evapotranspiración Potencial ET0 en Tecomán (mm)",
+      "rezago_meses_k": 5,
+      "correlacion_cruzada_r": -0.5095,
+      "p_valor": 7e-05,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    },
+    {
+      "variable_climatica": "et0_tecoman_mm",
+      "descripcion": "Evapotranspiración Potencial ET0 en Tecomán (mm)",
+      "rezago_meses_k": 6,
+      "correlacion_cruzada_r": -0.2844,
+      "p_valor": 0.03713,
+      "umbral_ic95": 0.253,
+      "significativa_95pct": true
+    }
+  ],
+  "comparativa_4_modelos_prueba": [
+    {
+      "id_modelo": "M4_SARIMA",
+      "modelo": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "parametros_justificados": "Orden (1, 1, 0)x(1, 1, 0, 12) seleccionado por ACF/PACF (lag 1 y lag 12) y menor AIC=-51.76",
+      "AIC_train": -51.76,
+      "MAE_test_mxn_kg": 0.8905,
+      "RMSE_test_mxn_kg": 1.2286,
+      "MAPE_test_pct": 3.04,
+      "ranking_error_prueba": 1,
+      "seleccionado": true
+    },
+    {
+      "id_modelo": "M3_HOLT_WINTERS",
+      "modelo": "3. Holt-Winters Estacional (m=12, Multiplicativo)",
+      "parametros_justificados": "alpha=1.000, gamma=0.000, m=12",
+      "AIC_train": 119.31,
+      "MAE_test_mxn_kg": 2.1875,
+      "RMSE_test_mxn_kg": 3.6435,
+      "MAPE_test_pct": 6.66,
+      "ranking_error_prueba": 2,
+      "seleccionado": false
+    },
+    {
+      "id_modelo": "M1_SES",
+      "modelo": "1. Suavizamiento Exponencial Simple (SES)",
+      "parametros_justificados": "alpha=1.000 (sin tendencia ni estacionalidad)",
+      "AIC_train": 169.95,
+      "MAE_test_mxn_kg": 5.7233,
+      "RMSE_test_mxn_kg": 6.8379,
+      "MAPE_test_pct": 21.74,
+      "ranking_error_prueba": 3,
+      "seleccionado": false
+    },
+    {
+      "id_modelo": "M2_HOLT",
+      "modelo": "2. Método de Holt (Tendencia Lineal)",
+      "parametros_justificados": "alpha=0.65, beta=0.18 (tendencia lineal sin estacionalidad)",
+      "AIC_train": 202.54,
+      "MAE_test_mxn_kg": 6.4274,
+      "RMSE_test_mxn_kg": 7.4672,
+      "MAPE_test_pct": 24.22,
+      "ranking_error_prueba": 4,
+      "seleccionado": false
+    }
+  ],
+  "modelo_ganador": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+  "diagnostico_residuos_ljung_box": {
+    "ljung_box_lag6_stat": 2.4812,
+    "ljung_box_lag6_pvalue": 0.8706,
+    "ljung_box_lag12_stat": 8.1072,
+    "ljung_box_lag12_pvalue": 0.7767,
+    "es_ruido_blanco_95pct": true,
+    "shapiro_wilk_stat": 0.477,
+    "shapiro_wilk_pvalue": 0.0,
+    "media_residuos_log": -0.03087,
+    "std_residuos_log": 0.17621
+  },
+  "pronostico_2026_ic95": [
+    {
+      "anio_mes": "2026-01",
+      "fecha_corte": "2026-01-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 30.81,
+      "limite_inferior_ic95_mxn_kg": 27.58,
+      "limite_superior_ic95_mxn_kg": 34.42
+    },
+    {
+      "anio_mes": "2026-02",
+      "fecha_corte": "2026-02-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 41.57,
+      "limite_inferior_ic95_mxn_kg": 36.39,
+      "limite_superior_ic95_mxn_kg": 47.49
+    },
+    {
+      "anio_mes": "2026-03",
+      "fecha_corte": "2026-03-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 43.05,
+      "limite_inferior_ic95_mxn_kg": 36.74,
+      "limite_superior_ic95_mxn_kg": 50.44
+    },
+    {
+      "anio_mes": "2026-04",
+      "fecha_corte": "2026-04-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 38.32,
+      "limite_inferior_ic95_mxn_kg": 32.05,
+      "limite_superior_ic95_mxn_kg": 45.8
+    },
+    {
+      "anio_mes": "2026-05",
+      "fecha_corte": "2026-05-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 29.52,
+      "limite_inferior_ic95_mxn_kg": 24.24,
+      "limite_superior_ic95_mxn_kg": 35.95
+    },
+    {
+      "anio_mes": "2026-06",
+      "fecha_corte": "2026-06-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 23.48,
+      "limite_inferior_ic95_mxn_kg": 18.97,
+      "limite_superior_ic95_mxn_kg": 29.08
+    },
+    {
+      "anio_mes": "2026-07",
+      "fecha_corte": "2026-07-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 19.9,
+      "limite_inferior_ic95_mxn_kg": 15.82,
+      "limite_superior_ic95_mxn_kg": 25.02
+    },
+    {
+      "anio_mes": "2026-08",
+      "fecha_corte": "2026-08-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 18.97,
+      "limite_inferior_ic95_mxn_kg": 14.87,
+      "limite_superior_ic95_mxn_kg": 24.21
+    },
+    {
+      "anio_mes": "2026-09",
+      "fecha_corte": "2026-09-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 20.68,
+      "limite_inferior_ic95_mxn_kg": 15.99,
+      "limite_superior_ic95_mxn_kg": 26.76
+    },
+    {
+      "anio_mes": "2026-10",
+      "fecha_corte": "2026-10-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 22.41,
+      "limite_inferior_ic95_mxn_kg": 17.1,
+      "limite_superior_ic95_mxn_kg": 29.38
+    },
+    {
+      "anio_mes": "2026-11",
+      "fecha_corte": "2026-11-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 25.1,
+      "limite_inferior_ic95_mxn_kg": 18.91,
+      "limite_superior_ic95_mxn_kg": 33.32
+    },
+    {
+      "anio_mes": "2026-12",
+      "fecha_corte": "2026-12-01",
+      "horizonte": "Pronostico_Futuro_2026",
+      "modelo_utilizado": "4. SARIMA(1,1,0)(1,1,0)_12 [log]",
+      "observado_real_mxn_kg": NaN,
+      "pronostico_puntual_mxn_kg": 28.16,
+      "limite_inferior_ic95_mxn_kg": 20.97,
+      "limite_superior_ic95_mxn_kg": 37.83
+    }
+  ],
+  "figuras_generadas": [
+    "C:\\Users\\nono1\\.gemini\\antigravity\\scratch\\tdl-escareno-limon-colima\\docs\\E1\\figuras\\fig1_puerta_calidad_y_limpieza.png",
+    "C:\\Users\\nono1\\.gemini\\antigravity\\scratch\\tdl-escareno-limon-colima\\docs\\E1\\figuras\\fig2_descomposicion_serie_60m.png",
+    "C:\\Users\\nono1\\.gemini\\antigravity\\scratch\\tdl-escareno-limon-colima\\docs\\E1\\figuras\\fig3_estacionariedad_acf_pacf_ccf.png",
+    "C:\\Users\\nono1\\.gemini\\antigravity\\scratch\\tdl-escareno-limon-colima\\docs\\E1\\figuras\\fig4_comparativa_4_modelos_test.png",
+    "C:\\Users\\nono1\\.gemini\\antigravity\\scratch\\tdl-escareno-limon-colima\\docs\\E1\\figuras\\fig5_pronostico_final_ic95_residuos.png"
+  ]
+}

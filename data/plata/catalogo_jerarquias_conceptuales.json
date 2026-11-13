@@ -1,0 +1,45 @@
+{
+  "jerarquia_geografica_productora": {
+    "nivel_1_municipio": [
+      "Tecoman (6009)",
+      "Armeria (6001)",
+      "Manzanillo (6007)",
+      "Colima (6002)"
+    ],
+    "nivel_2_zona_agroclimatica": [
+      "Valle Citricola Sur",
+      "Corredor Costero",
+      "Valle Central"
+    ],
+    "nivel_3_entidad_federativa": "Colima (CVE-INEGI 06)",
+    "nivel_4_region_agroalimentaria": "Centro-Occidente / Pacífico Centro"
+  },
+  "jerarquia_comercial_mercados": {
+    "nivel_1_central_mayorista": [
+      "MKT-COL",
+      "MKT-GDL",
+      "MKT-CDMX",
+      "MKT-MTY"
+    ],
+    "nivel_2_tipo_plaza": {
+      "MKT-COL": "Mercado en Origen (Empacadoras Regionales)",
+      "MKT-GDL": "Hub Mayorista Occidente",
+      "MKT-CDMX": "Megamercado Consumo Nacional (Iztapalapa)",
+      "MKT-MTY": "Hub Mayorista Noreste (San Nicolás)"
+    },
+    "nivel_3_sistema_nacional": "SNIIM - Secretaría de Economía"
+  },
+  "jerarquia_producto": {
+    "nivel_1_presentacion": "Limón con semilla #5 (Arpilla 20 kg prorrateada a MXN/kg)",
+    "nivel_2_especie_variedad": "Limón Mexicano (Citrus aurantifolia Swingle)",
+    "nivel_3_grupo_cultivo": "Cítricos",
+    "nivel_4_sector": "Frutas y Hortalizas Frescas"
+  },
+  "jerarquia_temporal_fenologica": {
+    "nivel_1": "Día (YYYY-MM-DD)",
+    "nivel_2": "Mes (YYYY-MM)",
+    "nivel_3": "Ciclo Fenológico Citrícola (Escasez Invernal, Floración Primavera, Cosecha Pico Verano, Transición Otoño)",
+    "nivel_4": "Trimestre (Q1-Q4)",
+    "nivel_5": "Año Agrícola (2021-2025)"
+  }
+}

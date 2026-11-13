@@ -86,15 +86,22 @@ class ExtractorEtico:
         espera = pausa - (time.time() - self.ultimo.get(dominio, 0.0))
         if espera > 0:
             time.sleep(espera)
+        ultimo_error: Exception | None = None
         for i in range(intentos):
-            r = self.sesion.get(url, params=params, timeout=25)
-            self.ultimo[dominio] = time.time()
-            if r.status_code == 429 or r.status_code >= 500:
-                time.sleep(pausa * (2**i))  # espera exponencial ante saturación
+            try:
+                r = self.sesion.get(url, params=params, timeout=25)
+                self.ultimo[dominio] = time.time()
+                if r.status_code == 429 or r.status_code >= 500:
+                    time.sleep(pausa * (2**i))  # espera exponencial ante saturación
+                    continue
+                r.raise_for_status()
+                return r
+            except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as exc:
+                ultimo_error = exc
+                self.ultimo[dominio] = time.time()
+                time.sleep(pausa * (2**i))  # espera exponencial ante timeout de red TLS/TCP
                 continue
-            r.raise_for_status()
-            return r
-        raise RuntimeError(f"Sin respuesta valida de {url} tras {intentos} intentos")
+        raise RuntimeError(f"Sin respuesta valida de {url} tras {intentos} intentos: {ultimo_error}")
 
 
 def calcular_sha256(ruta: Path) -> str:

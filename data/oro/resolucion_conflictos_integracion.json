@@ -1,0 +1,22 @@
+{
+  "conflicto_1_granularidad_temporal": {
+    "fuente_a": "Open-Meteo (frecuencia diaria YYYY-MM-DD, 7,304 registros)",
+    "fuente_b": "SNIIM Economía (frecuencia mensual YYYY-MM, 240 registros)",
+    "resolucion": "Agregación física mensual por municipio (promedios térmicos, sumas acumuladas de precipitación, ET0, déficit hídrico y GDD) sincronizada con llave canónica anio_mes (YYYY-MM) y fecha_corte (YYYY-MM-01)."
+  },
+  "conflicto_2_resolucion_entidades_espaciales": {
+    "fuente_a": "Identificadores geoestadísticos municipales INEGI (6009 Tecomán, 6001 Armería, 6007 Manzanillo, 6002 Colima)",
+    "fuente_b": "Identificadores de centrales de abasto SNIIM (MKT-COL, MKT-GDL, MKT-CDMX, MKT-MTY)",
+    "resolucion": "Entity Resolution de dos niveles: (1) Vinculación directa del mercado en origen MKT-COL con el epicentro productivo Tecomán (6009) y (2) Construcción del índice climático ponderado de la cuenca citrícola de Colima según participación en superficie sembrada SIAP (Tecomán 55%, Armería 22%, Manzanillo 15%, Colima 8%)."
+  },
+  "conflicto_3_unidades_y_esquema": {
+    "fuente_a": "Variables meteorológicas en °C, mm/día y MJ/m² con nombres en inglés en el JSON crudo de Open-Meteo",
+    "fuente_b": "Cotizaciones en Arpilla de 20 kg y Kilogramo en tablas HTML de SNIIM",
+    "resolucion": "Renombrado canónico snake_case con sufijo explícito de unidad (_c, _mm, _mj_m2, _mxn_kg, _ton) y prorrateo homogéneo de arpilla de 20 kg a MXN/kg."
+  },
+  "conflicto_4_codificacion_y_zona_horaria": {
+    "fuente_a": "Timestamps UTC en API REST Open-Meteo",
+    "fuente_b": "Fechas locales CST (America/Mexico_City) e ISO-8859-1 en portal SNIIM",
+    "resolucion": "Alineación a zona horaria America/Mexico_City y normalización de texto en UTF-8 sin caracteres especiales ambiguos en llaves."
+  }
+}
