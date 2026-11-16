@@ -1,0 +1,16 @@
+{
+  "archivo": "captura_diaria_2026-11-16.csv",
+  "ruta_relativa": "data/bronce/open_meteo/captura_diaria_2026-11-16.csv",
+  "fuente": "Open-Meteo Forecast & Recent Days API",
+  "url_origen": "https://api.open-meteo.com/v1/forecast",
+  "capturado_en_utc": "2026-11-16T21:30:08.274642+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "csv",
+  "tamano_bytes": 6362,
+  "sha256": "5076a85c73bbdf675da3079b16da3f9d19733c007e6174b6d1c1efd3494341c6",
+  "registros": 56,
+  "periodos_temporales": 14,
+  "datos_personales_incluidos": false,
+  "licencia": "CC BY 4.0 (Open-Meteo)",
+  "notas": "Captura diaria automática ejecutada el 2026-11-16 para 4 municipios citrícolas de Colima."
+}
