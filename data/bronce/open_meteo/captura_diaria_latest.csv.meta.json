@@ -3,14 +3,14 @@
   "ruta_relativa": "data/bronce/open_meteo/captura_diaria_latest.csv",
   "fuente": "Open-Meteo Forecast & Recent Days API (Latest)",
   "url_origen": "https://api.open-meteo.com/v1/forecast",
-  "capturado_en_utc": "2026-11-20T19:31:04.822962+00:00",
+  "capturado_en_utc": "2026-11-21T18:33:43.165150+00:00",
   "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
   "formato": "csv",
-  "tamano_bytes": 6311,
-  "sha256": "d2b986892d48290e2841c78e4e964a2aa6ffc30c7eef81c0ef94ca0267670d4e",
+  "tamano_bytes": 6314,
+  "sha256": "32af516571c7996c7b190f838bc4c989016a169b016dcfb5d88b578203b5b6fc",
   "registros": 56,
   "periodos_temporales": 14,
   "datos_personales_incluidos": false,
   "licencia": "CC BY 4.0 (Open-Meteo)",
-  "notas": "Espejo latest actualizado el 2026-11-20."
+  "notas": "Espejo latest actualizado el 2026-11-21."
 }
