@@ -7,7 +7,7 @@
 - **Asignaturas:**
   - **Ingeniería de Datos (`CMD-2602`):** Mtro. Armando Román Gallardo Heredia (`armando.gallardo@colima.tecnm.mx`)
   - **Análisis Estadístico para Ciencia de Datos:** Mtro. Mónico Joel Sánchez Velasco (`joel.sanchez@colima.tecnm.mx`)
-- **Estado actual:** **Entregas `E0` y `E1` completadas y verificadas** (Etiquetas: [`e0`](docs/E0/ENTREGA.md) · [`e1`](docs/E1/ENTREGA.md)).
+- **Estado actual:** **Entregas `E0`, `E1` y `E2` completadas y verificadas** (Etiquetas: [`e0`](docs/E0/ENTREGA.md) · [`e1`](docs/E1/ENTREGA.md) · [`e2`](docs/E2/ENTREGA.md)).
 
 ---
 
@@ -69,22 +69,30 @@ git clone https://github.com/NorbertoDaniel65/tdl-escareno-limon-colima.git
 cd tdl-escareno-limon-colima
 pip install -r requirements.txt
 
-# 2. Verificar automáticamente el cumplimiento íntegro de las Entregas E0 y E1
+# 2. Verificar automáticamente el cumplimiento íntegro de las Entregas E0, E1 y E2
 python -m pipeline.verificar_e0
-python -m pipeline.series_tiempo_e1
 python -m pipeline.verificar_e1
+python -m pipeline.verificar_e2
 
-# 3. Ejecutar pruebas unitarias (19 pruebas E0 + E1)
+# 3. Reproducir pipeline E2 completo (Geoespacial, Linaje, DOE 2^3 / 2x3 / 2^4, ISO 25010/25012 y Figuras)
+python -m pipeline.geoespacial_e2
+python -m pipeline.linaje_datos
+python -m pipeline.experimento_doe_e2
+python -m pipeline.evaluacion_iso_e2
+python -m pipeline.figuras_e2
+
+# 4. Ejecutar pruebas unitarias (27 pruebas E0 + E1 + E2)
 python -m pytest -v
 
-# 4. Ejecutar captura diaria en Capa Bronce o abrir Tablero E1
+# 5. Ejecutar captura diaria en Capa Bronce o abrir Tablero E1+E2
 python -m extractores.ejecutar_captura --modo diario
 streamlit run tablero/app.py
 ```
 
 ---
 
-## 📜 Licencias y Cumplimiento Ético
+## 📜 Licencias y Cumplimiento Ético ([`docs/etica-datos.md`](docs/etica-datos.md))
 - **Datos Agroclimáticos (`data/bronce/open_meteo/`):** Open-Meteo.com / Copernicus ERA5-Land bajo licencia abierta **CC BY 4.0**.
 - **Datos de Precios Mayoristas (`data/bronce/sniim_limon/`):** Sistema Nacional de Información e Integración de Mercados (SNIIM - Secretaría de Economía) bajo **Términos de Libre Uso de Datos Abiertos del Gobierno de México**.
-- **Privacidad:** Cero datos personales en todas las capas del repositorio conforme a la **LFPDPPP**.
+- **Datos Geoespaciales (`data/bronce/geoespacial/`):** © OpenStreetMap Contributors bajo **Open Database License (ODbL 1.0)** + Catálogo Geoestadístico Municipal INEGI.
+- **Privacidad y Linaje:** Cero datos personales en todas las capas del repositorio conforme a la **LFPDPPP** y **100% de trazabilidad** en los `310` registros maestros de Capa Oro (`data/oro/linaje_datos_e2.json`).

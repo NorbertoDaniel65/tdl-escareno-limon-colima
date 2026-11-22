@@ -8,6 +8,7 @@ Este directorio documenta el diseño técnico, contractual y ético-legal de las
 |---|---|---|---|---|---|---|
 | **F1** | **Open-Meteo Archive & Forecast API** ([`open_meteo.md`](open_meteo.md)) | API REST Meteorológica y Agroclimática (ERA5-Land) | **60 meses** (2021-01 a 2025-12 · 1,826 días × 4 municipios = 7,304 registros diarios y 240 mensuales) | **Diaria automática** (`0 12 * * *` vía GitHub Actions) | `GET` JSON sobre HTTPS con `ExtractorEtico` (`pausa=1.5s`) | ✅ Operando y automatizada |
 | **F2** | **SNIIM - Secretaría de Economía** ([`sniim_agro.md`](sniim_agro.md)) | Portal Público Gubernamental (Scraping ético + Serie Histórica Oficial) | **60 meses** (2021-01 a 2025-12 · 4 mercados mayoristas = 240 registros mensuales) | **Diaria / Semanal** (Monitoreo ético en GitHub Actions) | `GET` HTML con `BeautifulSoup` + Serie Histórica consolidada | ✅ Operando y verificada |
+| **F3** | **OpenStreetMap (Nominatim + Overpass) + INEGI** ([`osm_geoespacial.md`](osm_geoespacial.md)) | Fuente Especializada Geoespacial (E2 · GeoJSON WGS84 `EPSG:4326`) | **10 polígonos municipales de Colima + 1,164 nodos agrologísticos** (`1,074` en Colima + `90` en cuarentena) | Batch por entrega con caché local | `GET`/`POST` con `ExtractorEtico` + unión espacial `GeoPandas sjoin` | ✅ Integrada en E2 (`0` PII) |
 
 ## Reglas Éticas y Legales Aplicadas en Código (`extractores/base.py`)
 

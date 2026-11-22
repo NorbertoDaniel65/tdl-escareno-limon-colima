@@ -1,0 +1,16 @@
+caracteristica,punto_vista,metrica_medida,valor_pct
+Exactitud,Inherente,MAPE prueba pronóstico = 3.04%; 0 errores aritméticos en RN-01..RN-03; áreas UTM EPSG:32613,97.0
+Completitud,Inherente,"0 valores nulos en 14,200 celdas de las 3 tablas de Capa Oro",100.0
+Consistencia,Inherente,"100% conservación de masa en Puerta Tabular (7,544+11=7,555) y Geoespacial (1,074+90=1,164)",100.0
+Credibilidad,Inherente,"3 fuentes primarias institucionales/abiertas verificables (ERA5-Land, SNIIM-SE, OSM/INEGI)",94.0
+Actualidad,Inherente,Captura diaria automatizada activa hasta 2026-11-21 + captura geoespacial 2026-11-22,95.0
+Accesibilidad,Inherente y Sistema,Datasets abiertos en GitHub (CSV/GeoJSON/JSON) y tablero interactivo Streamlit,96.0
+Conformidad,Inherente y Sistema,"Estándares ISO-8601, UTF-8, RFC 7946 GeoJSON, EPSG:4326/32613, LFPDPPP y CC BY 4.0/ODbL 1.0",98.0
+Confidencialidad,Inherente y Sistema,0 datos personales (PII) en Bronce/Plata/Oro; lista blanca estricta + regex sanitizador,100.0
+Eficiencia,Inherente y Sistema,Reducción de almacenamiento 91.13% con Parquet y 99.18% por agregación Bronce->Oro,96.0
+Precisión,Inherente y Sistema,"Precios a 2 decimales (MXN/kg), clima a 2 decimales y coordenadas WGS84 a 5-6 decimales (~0.1-1 m)",97.0
+Trazabilidad (Linaje),Inherente y Sistema,"310/310 registros Oro (100.0%) con linaje_id, archivo Bronce, SHA-256 y fecha UTC",100.0
+Comprensibilidad,Inherente y Sistema,Diccionario formal data/oro/diccionario_datos.md + recomendaciones en lenguaje de negocio,95.0
+Disponibilidad,Dependiente del Sistema,Disponibilidad real medida A = 99.74% sobre 306 h continuas en GitHub Actions,99.74
+Portabilidad,Dependiente del Sistema,"Formatos no propietarios independientes de SO (CSV UTF-8, GeoJSON, Parquet, JSON)",98.0
+Recuperabilidad,Dependiente del Sistema,Capa Bronce inmutable con SHA-256 + Cuarentena preservada (reconstrucción determinista 100%),98.0

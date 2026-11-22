@@ -54,3 +54,23 @@
 | 27 | `precio_origen_zscore` | `float64` | `σ (adim.)` | Escalado Z-Score | `[-3.0, +5.0]` | Precio frecuente en origen estandarizado ($Z = (Y - \mu)/\sigma$). |
 | 28 | `precio_origen_minmax` | `float64` | `[0, 1]` | Escalado Min-Max | `[0.0, 1.0]` | Precio frecuente en origen normalizado al intervalo $[0, 1]$. |
 | 29 | `deficit_tecoman_zscore` | `float64` | `σ (adim.)` | Escalado Z-Score | `[-3.0, +5.0]` | Déficit hídrico de Tecomán estandarizado ($Z = (X - \mu)/\sigma$). |
+
+## 3. Extensión E2 — Trazabilidad de Linaje y Perfil Geoespacial Municipal
+
+En la **Etapa E2** la Capa Oro se amplía con el perfil geoespacial integrado (`data/oro/perfil_geoespacial_municipios_oro.geojson` y `.csv`, `10` polígonos municipales de Colima) y con **6 columnas obligatorias de linaje** inyectadas en el 100% de los `310` registros maestros de Capa Oro (`serie_mensual_oro_60m.csv`, `panel_integrado_municipio_mercado_oro.csv` y `perfil_geoespacial_municipios_oro.csv`):
+
+| Columna de Linaje / Geoespacial | Tipo | Descripción y Propósito de Auditoría |
+| :--- | :---: | :--- |
+| `linaje_id_registro` | `string` | Identificador único e inmutable por fila en Capa Oro (ej. `ORO-SERIE-2021-01`, `ORO-PANEL-2021-01-06009`, `ORO-GEO-06009`). |
+| `linaje_fuentes_bronce` | `string` | Fuentes primarias que originaron el registro (`open_meteo_archive`, `sniim_limon`, `osm_nominatim_geo`, `osm_overpass_geo`). |
+| `linaje_archivos_bronce` | `string` | Ruta(s) relativa(s) exacta(s) de los archivos crudos en `data/bronce/` desde los cuales derivó la fila. |
+| `linaje_sha256_bronce` | `string` | Huella criptográfica SHA-256 de los archivos fuente en Capa Bronce (enlazada al hash completo de 64 caracteres en `data/oro/linaje_datos_e2.json`). |
+| `linaje_fecha_ingesta_utc` | `string (ISO-8601)` | Marca temporal exacta de ingesta en UTC extraída del archivo `.meta.json` de Capa Bronce. |
+| `linaje_version_pipeline` | `string` | Versión semántica del pipeline generador (`e2-linaje-v2.0`). |
+| `superficie_km2` | `float64` | Superficie municipal real calculada en proyección métrica `EPSG:32613` (UTM Zona 13N). |
+| `n_huertas_citricolas_osm` | `int64` | Conteo de huertas/parcelas (`landuse=orchard`) asignadas al municipio vía `gpd.sjoin(..., predicate="within")`. |
+| `n_empaque_bodega_osm` | `int64` | Conteo de instalaciones industriales, almacenes y bodegas mapeadas en OpenStreetMap dentro del municipio. |
+| `n_mercados_abasto_osm` | `int64` | Conteo de mercados y centros de abasto (`amenity=marketplace`) dentro del municipio. |
+| `densidad_agrologistica_100km2` | `float64` | Densidad espacial de infraestructura agrologística por cada $100\text{ km}^2$ de superficie municipal. |
+| `dist_puerto_manzanillo_km` | `float64` | Distancia euclidiana métrica (`EPSG:32613`) desde el centroide municipal hasta el Puerto de Manzanillo (nodo de exportación). |
+| `dist_corredor_gdl_54d_km` | `float64` | Distancia euclidiana métrica hacia el corredor carretero Autopista 54D (salida logística hacia Guadalajara `MKT-GDL`). |

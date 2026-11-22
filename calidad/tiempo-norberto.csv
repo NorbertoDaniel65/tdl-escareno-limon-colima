@@ -10,3 +10,8 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-12,18:00,20:15,10,codigo,"Correccion de ReadTimeout en extractores/base.py y desarrollo de pipeline/integracion_oro.py con diccionario de datos"
 2026-11-13,09:30,12:00,10,codigo,"Implementacion de pipeline/series_tiempo_e1.py (ADF, ACF/PACF, CCF y modelos SES, Holt, Holt-Winters y SARIMA)"
 2026-11-13,12:15,14:15,5,pruebas,"Ejecucion de pruebas pytest E1, workflow CI ci-calidad.yml, notebook limpieza.ipynb y reporte Entrega_E1_Escareno_Norberto.pdf"
+2026-11-18,17:30,19:00,10,revision,"Panel de medio termino y revision de incidentes HTTP 5xx/429 de Open-Meteo en GitHub Actions Runs #44168162030 y #44384386430"
+2026-11-19,16:00,18:15,10,diseno,"Diseno de fuente especializada geoespacial (OSM Nominatim/Overpass + INEGI), esquema de linaje de Capa Oro y matriz factorial 2^3 / 2x3 / 2^4"
+2026-11-20,17:00,19:30,15,codigo,"Correccion de registro de errores HTTP en extractores/base.py (soporte POST) e implementacion de extractores/geoespacial_osm.py y pipeline/geoespacial_e2.py"
+2026-11-21,15:30,18:30,10,codigo,"Implementacion de pipeline/linaje_datos.py, pipeline/experimento_doe_e2.py (84 corridas reales) y pipeline/evaluacion_iso_e2.py"
+2026-11-22,09:30,12:00,10,pruebas,"Generacion de 5 figuras HD, actualizacion de tablero/app.py, redaccion de docs/etica-datos.md, relatoria-E2.md, pruebas pytest E2 y PDF oficial TecNM"

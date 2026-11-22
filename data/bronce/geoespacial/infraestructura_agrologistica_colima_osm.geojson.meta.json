@@ -1,0 +1,16 @@
+{
+  "archivo": "infraestructura_agrologistica_colima_osm.geojson",
+  "ruta_relativa": "data/bronce/geoespacial/infraestructura_agrologistica_colima_osm.geojson",
+  "fuente": "OpenStreetMap Overpass API (Infraestructura Agrologística y Citrícola Colima)",
+  "url_origen": "https://overpass-api.de/api/interpreter",
+  "capturado_en_utc": "2026-11-22T16:22:17.336813+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "geojson",
+  "tamano_bytes": 577973,
+  "sha256": "d5c7129fda15e00efb9b1128dce996a8ccee152a432d7bab80da9c643fbc2de3",
+  "registros": 1164,
+  "periodos_temporales": 1,
+  "datos_personales_incluidos": false,
+  "licencia": "ODbL 1.0 (OpenStreetMap Contributors)",
+  "notas": "Nodos/centroides reales de huertas, mercados, bodegas/empacadoras y puerto en Colima; 0 PII."
+}

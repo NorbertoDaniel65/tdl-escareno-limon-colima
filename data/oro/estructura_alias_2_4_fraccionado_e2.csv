@@ -1,0 +1,8 @@
+efecto_estimado,alias_en_2_4_menos_1,tipo_confusion,efecto_completo_2_4_ms,efecto_fraccionado_2_4_1_ms
+A (Paralelismo I/O),A + BCD,Principal confundido solo con interacción triple (limpio de 2FI),-5.548,0.487
+B (Motor Validación),B + ACD,Principal confundido solo con interacción triple (limpio de 2FI),-126.554,-120.311
+C (Formato Escritura),C + ABD,Principal confundido solo con interacción triple (limpio de 2FI),-114.417,-119.266
+D (Partición Salida),D + ABC,Principal confundido solo con interacción triple (limpio de 2FI),-22.061,-19.939
+AB (Paralelismo × Validación),AB + CD,Interacción doble confundida con interacción doble (Resolución IV),4.926,-8.48
+AC (Paralelismo × Formato),AC + BD,Interacción doble confundida con interacción doble (Resolución IV),-6.395,-9.479
+AD (Paralelismo × Partición),AD + BC,Interacción doble confundida con interacción doble (Resolución IV),-6.439,-5.087

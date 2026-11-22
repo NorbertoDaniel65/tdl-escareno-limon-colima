@@ -1,0 +1,16 @@
+{
+  "archivo": "infraestructura_agrologistica_colima_osm.csv",
+  "ruta_relativa": "data/bronce/geoespacial/infraestructura_agrologistica_colima_osm.csv",
+  "fuente": "OpenStreetMap Overpass API (Tabla CSV Infraestructura Agrologística Colima)",
+  "url_origen": "https://overpass-api.de/api/interpreter",
+  "capturado_en_utc": "2026-11-22T16:22:17.338528+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "csv",
+  "tamano_bytes": 215007,
+  "sha256": "1f6ec9ba89823fc45e46e1e16f5a5636b863e4f297106fb239fcbee775fd07c9",
+  "registros": 1164,
+  "periodos_temporales": 1,
+  "datos_personales_incluidos": false,
+  "licencia": "ODbL 1.0 (OpenStreetMap Contributors)",
+  "notas": "Representación tabular sincronizada de infraestructura_agrologistica_colima_osm.geojson; 0 PII."
+}

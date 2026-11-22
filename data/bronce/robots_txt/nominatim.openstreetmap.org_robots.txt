@@ -1,0 +1,14 @@
+User-agent: ia_archiver
+Allow: /
+
+User-agent: *
+Disallow: /search.php
+Disallow: /search
+Disallow: /details.php
+Disallow: /details
+Disallow: /reverse.php
+Disallow: /reverse
+Disallow: /lookup
+Disallow: /lookup.php
+Disallow: /status
+Disallow: /status.php

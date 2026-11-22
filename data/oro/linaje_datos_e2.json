@@ -1,0 +1,122 @@
+{
+  "version_esquema_linaje": "TDL-Lineage-2.0",
+  "generado_en_utc": "2026-11-22T16:28:55.545694+00:00",
+  "politica_trazabilidad": "100% de los registros de Capa Oro poseen ID de linaje, archivo(s) de Capa Bronce, huella SHA-256 y fecha de ingesta UTC.",
+  "cobertura_trazabilidad_pct": 100.0,
+  "total_registros_oro_rastreados": 310,
+  "desglose_por_tabla_oro": {
+    "serie_mensual_oro_60m.csv": 60,
+    "panel_integrado_municipio_mercado_oro.csv": 240,
+    "perfil_geoespacial_municipios_oro.csv": 10
+  },
+  "nodos_bronce_origen": {
+    "open_meteo_archive_diario": {
+      "ruta_relativa": "data/bronce/open_meteo/agroclima_colima_diario_historico.csv",
+      "fuente": "Open-Meteo Historical Weather API (ERA5-Land)",
+      "url_origen": "https://archive-api.open-meteo.com/v1/archive",
+      "capturado_en_utc": "2026-11-09T22:27:10.737628+00:00",
+      "sha256_completo": "a8e5f5c699898e47fbb50c3fc6af023519244d3e1f1a9879e0a64189ad0488cc",
+      "registros": 7304,
+      "licencia": "CC BY 4.0 (Open-Meteo / Copernicus ERA5)",
+      "datos_personales_incluidos": false
+    },
+    "open_meteo_archive_mensual": {
+      "ruta_relativa": "data/bronce/open_meteo/agroclima_colima_mensual_60m.csv",
+      "fuente": "Open-Meteo Historical Weather API (Agregado Mensual)",
+      "url_origen": "https://archive-api.open-meteo.com/v1/archive",
+      "capturado_en_utc": "2026-11-09T22:27:10.740162+00:00",
+      "sha256_completo": "6aad451dfcd2d2f033352a9a6182fac3800a818bc3b92fb2baa73cc7bd2ae240",
+      "registros": 240,
+      "licencia": "CC BY 4.0 (Open-Meteo / Copernicus ERA5)",
+      "datos_personales_incluidos": false
+    },
+    "sniim_limon_historico": {
+      "ruta_relativa": "data/bronce/sniim_limon/precios_limon_sniim_historico_60m.csv",
+      "fuente": "SNIIM - Secretaría de Economía (Mercados Nacionales Frutas y Hortalizas)",
+      "url_origen": "http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFrutasYHortalizas.aspx",
+      "capturado_en_utc": "2026-11-09T22:27:10.757455+00:00",
+      "sha256_completo": "7dde14cf7f818a89294b73c91a15647315794c91ef7021c29fb276edd598adc2",
+      "registros": 240,
+      "licencia": "Datos Abiertos Gobierno de México (Libre Uso con Atribución)",
+      "datos_personales_incluidos": false
+    },
+    "osm_nominatim_municipios": {
+      "ruta_relativa": "data/bronce/geoespacial/municipios_colima_osm.geojson",
+      "fuente": "OpenStreetMap Nominatim API (Límites Municipales Colima / Claves INEGI)",
+      "url_origen": "https://nominatim.openstreetmap.org/search",
+      "capturado_en_utc": "2026-11-22T16:21:41.507024+00:00",
+      "sha256_completo": "33ad5a5a544a2e111c010e55df561de6af659b67cef615b60cb5cdc2f47427c0",
+      "registros": 10,
+      "licencia": "ODbL 1.0 (OpenStreetMap Contributors) + Catálogo INEGI",
+      "datos_personales_incluidos": false
+    },
+    "osm_overpass_infraestructura": {
+      "ruta_relativa": "data/bronce/geoespacial/infraestructura_agrologistica_colima_osm.geojson",
+      "fuente": "OpenStreetMap Overpass API (Infraestructura Agrologística y Citrícola Colima)",
+      "url_origen": "https://overpass-api.de/api/interpreter",
+      "capturado_en_utc": "2026-11-22T16:22:17.336813+00:00",
+      "sha256_completo": "d5c7129fda15e00efb9b1128dce996a8ccee152a432d7bab80da9c643fbc2de3",
+      "registros": 1164,
+      "licencia": "ODbL 1.0 (OpenStreetMap Contributors)",
+      "datos_personales_incluidos": false
+    }
+  },
+  "transformaciones_dag": [
+    {
+      "etapa": "1_Ingesta_Bronce",
+      "scripts": [
+        "extractores/open_meteo.py",
+        "extractores/sniim_limon.py",
+        "extractores/geoespacial_osm.py"
+      ],
+      "salidas": [
+        "data/bronce/open_meteo/agroclima_colima_diario_historico.csv",
+        "data/bronce/sniim_limon/precios_limon_sniim_historico_60m.csv",
+        "data/bronce/geoespacial/municipios_colima_osm.geojson",
+        "data/bronce/geoespacial/infraestructura_agrologistica_colima_osm.geojson"
+      ],
+      "controles": "robots.txt archivado, User-Agent institucional, pausa >= 1.5s, lista blanca 0 PII, SHA-256 en .meta.json"
+    },
+    {
+      "etapa": "2_Puerta_Calidad_y_Cuarentena",
+      "scripts": [
+        "pipeline/puerta_calidad.py",
+        "pipeline/geoespacial_e2.py"
+      ],
+      "salidas": [
+        "data/cuarentena/cuarentena_registros.csv",
+        "data/cuarentena/cuarentena_geoespacial_e2.csv"
+      ],
+      "controles": "Contratos Pandera, RN-01 a RN-04, validación CRS EPSG:4326 y filtro espacial within(Colima) sin borrado silencioso"
+    },
+    {
+      "etapa": "3_Limpieza_y_Union_Espacial_Plata",
+      "scripts": [
+        "pipeline/limpieza_plata.py",
+        "pipeline/geoespacial_e2.py"
+      ],
+      "salidas": [
+        "data/plata/agroclima_mensual_plata.csv",
+        "data/plata/precios_sniim_mensual_plata.csv",
+        "data/plata/infraestructura_agrologistica_colima_plata.geojson"
+      ],
+      "controles": "Imputación KNN/Temporal, preservación de choques 2022/2024, escalado Min-Max/Z-Score y gpd.sjoin point-in-polygon"
+    },
+    {
+      "etapa": "4_Integracion_y_Linaje_Oro",
+      "scripts": [
+        "pipeline/integracion_oro.py",
+        "pipeline/geoespacial_e2.py",
+        "pipeline/linaje_datos.py"
+      ],
+      "salidas": [
+        "data/oro/serie_mensual_oro_60m.csv",
+        "data/oro/panel_integrado_municipio_mercado_oro.csv",
+        "data/oro/perfil_geoespacial_municipios_oro.geojson",
+        "data/oro/catalogo_linaje_oro_bronce.csv",
+        "data/oro/linaje_datos_e2.json"
+      ],
+      "controles": "Entity resolution SIAP, columnas de linaje por registro, diccionario actualizado y verificación automatizada en pytest"
+    }
+  ]
+}

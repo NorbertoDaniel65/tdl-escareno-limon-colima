@@ -1,0 +1,16 @@
+{
+  "archivo": "municipios_colima_osm.geojson",
+  "ruta_relativa": "data/bronce/geoespacial/municipios_colima_osm.geojson",
+  "fuente": "OpenStreetMap Nominatim API (Límites Municipales Colima / Claves INEGI)",
+  "url_origen": "https://nominatim.openstreetmap.org/search",
+  "capturado_en_utc": "2026-11-22T16:21:41.507024+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)",
+  "formato": "geojson",
+  "tamano_bytes": 758518,
+  "sha256": "33ad5a5a544a2e111c010e55df561de6af659b67cef615b60cb5cdc2f47427c0",
+  "registros": 10,
+  "periodos_temporales": 1,
+  "datos_personales_incluidos": false,
+  "licencia": "ODbL 1.0 (OpenStreetMap Contributors) + Catálogo INEGI",
+  "notas": "Polígonos municipales reales WGS84 (EPSG:4326) de los 10 municipios de Colima (4 núcleos citrícolas + 6 vecinos)."
+}

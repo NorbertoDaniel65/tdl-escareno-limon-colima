@@ -70,13 +70,7 @@ class ExtractorEtico:
         }
         meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    def get(
-        self,
-        url: str,
-        params: dict[str, Any] | None = None,
-        intentos: int = 3,
-        es_api_rest: bool = False,
-    ) -> requests.Response:
+    def _preparar_peticion(self, url: str, es_api_rest: bool = False) -> tuple[str, float]:
         reglas = self._reglas(url)
         if not es_api_rest and not reglas.can_fetch(self.user_agent, url):
             raise PermissionError(f"robots.txt no permite {url}")
@@ -86,12 +80,24 @@ class ExtractorEtico:
         espera = pausa - (time.time() - self.ultimo.get(dominio, 0.0))
         if espera > 0:
             time.sleep(espera)
+        return dominio, pausa
+
+    def get(
+        self,
+        url: str,
+        params: dict[str, Any] | None = None,
+        intentos: int = 3,
+        es_api_rest: bool = False,
+        timeout: int = 25,
+    ) -> requests.Response:
+        dominio, pausa = self._preparar_peticion(url, es_api_rest=es_api_rest)
         ultimo_error: Exception | None = None
         for i in range(intentos):
             try:
-                r = self.sesion.get(url, params=params, timeout=25)
+                r = self.sesion.get(url, params=params, timeout=timeout)
                 self.ultimo[dominio] = time.time()
                 if r.status_code == 429 or r.status_code >= 500:
+                    ultimo_error = RuntimeError(f"HTTP {r.status_code} ({r.reason})")
                     time.sleep(pausa * (2**i))  # espera exponencial ante saturación
                     continue
                 r.raise_for_status()
@@ -102,6 +108,34 @@ class ExtractorEtico:
                 time.sleep(pausa * (2**i))  # espera exponencial ante timeout de red TLS/TCP
                 continue
         raise RuntimeError(f"Sin respuesta valida de {url} tras {intentos} intentos: {ultimo_error}")
+
+    def post(
+        self,
+        url: str,
+        data: dict[str, Any] | str | None = None,
+        intentos: int = 3,
+        es_api_rest: bool = True,
+        timeout: int = 45,
+    ) -> requests.Response:
+        """Envía peticiones POST éticas (p. ej. Overpass QL / GraphQL) respetando User-Agent, pausa y backoff."""
+        dominio, pausa = self._preparar_peticion(url, es_api_rest=es_api_rest)
+        ultimo_error: Exception | None = None
+        for i in range(intentos):
+            try:
+                r = self.sesion.post(url, data=data, timeout=timeout)
+                self.ultimo[dominio] = time.time()
+                if r.status_code == 429 or r.status_code >= 500:
+                    ultimo_error = RuntimeError(f"HTTP {r.status_code} ({r.reason})")
+                    time.sleep(pausa * (2**i))
+                    continue
+                r.raise_for_status()
+                return r
+            except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as exc:
+                ultimo_error = exc
+                self.ultimo[dominio] = time.time()
+                time.sleep(pausa * (2**i))
+                continue
+        raise RuntimeError(f"Sin respuesta valida (POST) de {url} tras {intentos} intentos: {ultimo_error}")
 
 
 def calcular_sha256(ruta: Path) -> str:

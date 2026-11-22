@@ -1,0 +1,21 @@
+{
+  "timestamp_utc": "2026-11-22T16:36:59.247390+00:00",
+  "fiabilidad_acumulada_e0_e2": {
+    "horas_observadas": 306.0,
+    "operaciones_exitosas_bitacora": 26,
+    "incidentes_reales_github_actions": 3,
+    "tasa_exito_operaciones_pct": 89.66,
+    "mtbf_horas": 101.73,
+    "mttr_horas": 0.27,
+    "disponibilidad_real_pct": 99.74
+  },
+  "seguridad_estatica": {
+    "archivos_escaneados": 158,
+    "secretos_expuestos": 0,
+    "archivos_con_hallazgo": []
+  },
+  "iso_25010_promedio_100": 95.38,
+  "iso_25012_promedio_100": 97.58,
+  "completitud_capa_oro_pct": 100.0,
+  "trazabilidad_linaje_pct": 100.0
+}

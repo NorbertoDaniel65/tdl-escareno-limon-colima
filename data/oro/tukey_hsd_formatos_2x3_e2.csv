@@ -1,0 +1,4 @@
+group1,group2,meandiff,p-adj,lower,upper,reject
+csv_utf8,parquet_snappy,-131.205,0.013,-234.8022,-27.6078,True
+csv_utf8,parquet_zstd,-131.04,0.0131,-234.6372,-27.4428,True
+parquet_snappy,parquet_zstd,0.165,1.0,-103.4322,103.7622,False

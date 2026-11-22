@@ -1,0 +1,114 @@
+{
+  "semilla_aleatorizacion": 23460323,
+  "diseno_2_3": {
+    "corridas_totales": 24,
+    "replicas_por_tratamiento": 3,
+    "bloques": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "tratamiento_optimo": "A+B+C+",
+    "niveles_optimos": {
+      "A_paralelismo": "4_Hilos_Paralelo",
+      "B_validacion": "Pandera_Vectorizado",
+      "C_formato": "Parquet_Snappy"
+    },
+    "media_optimo_experimento_ms": 69.07,
+    "media_linea_base_experimento_ms": 326.934,
+    "supuestos_residuos_escala_lineal": {
+      "shapiro_wilk_W": 0.9582,
+      "shapiro_wilk_p": 0.4026,
+      "normalidad_aprobada_5pct": true,
+      "levene_F": 0.5732,
+      "levene_p": 0.7674,
+      "homocedasticidad_aprobada_5pct": true,
+      "durbin_watson": 2.0277,
+      "independencia_aprobada": true,
+      "r2_modelo": 0.9981,
+      "r2_ajustado": 0.9968
+    },
+    "supuestos_residuos_escala_log": {
+      "shapiro_wilk_W": 0.9839,
+      "shapiro_wilk_p": 0.955,
+      "normalidad_aprobada_5pct": true,
+      "levene_F": 0.9204,
+      "levene_p": 0.5164,
+      "homocedasticidad_aprobada_5pct": true,
+      "durbin_watson": 2.1653,
+      "independencia_aprobada": true,
+      "r2_modelo": 0.9976,
+      "r2_ajustado": 0.996
+    },
+    "puerta_calidad_3_veredicto": "APROBADA EN ESCALA LINEAL Y LOGARÍTMICA"
+  },
+  "diseno_dos_vias_2x3": {
+    "corridas_totales": 18,
+    "factores": "motor_validacion (2) x formato_persistencia (3: CSV, Parquet Snappy, Parquet ZSTD)",
+    "p_valor_interaccion_BxC": 0.773826,
+    "medias_por_celda": [
+      {
+        "motor_validacion": "iterativo",
+        "formato_persistencia": "csv_utf8",
+        "tiempo_ms": 329.04,
+        "tamano_kb": 1936.75
+      },
+      {
+        "motor_validacion": "iterativo",
+        "formato_persistencia": "parquet_snappy",
+        "tiempo_ms": 194.66,
+        "tamano_kb": 171.73
+      },
+      {
+        "motor_validacion": "iterativo",
+        "formato_persistencia": "parquet_zstd",
+        "tiempo_ms": 197.91,
+        "tamano_kb": 140.13
+      },
+      {
+        "motor_validacion": "pandera_vectorizado",
+        "formato_persistencia": "csv_utf8",
+        "tiempo_ms": 201.57,
+        "tamano_kb": 1936.75
+      },
+      {
+        "motor_validacion": "pandera_vectorizado",
+        "formato_persistencia": "parquet_snappy",
+        "tiempo_ms": 73.54,
+        "tamano_kb": 171.73
+      },
+      {
+        "motor_validacion": "pandera_vectorizado",
+        "formato_persistencia": "parquet_zstd",
+        "tiempo_ms": 70.61,
+        "tamano_kb": 140.13
+      }
+    ]
+  },
+  "diseno_2_4_vs_fraccionado": {
+    "corridas_completo_2_4": 16,
+    "corridas_fraccionado_2_4_menos_1": 8,
+    "ahorro_corridas_pct": 50.0,
+    "relacion_definitoria": "I = ABCD (Generador D = ABC)",
+    "resolucion": "IV (efectos principales limpios de interacciones dobles; 2FI aliadas entre sí: AB=CD, AC=BD, AD=BC)"
+  },
+  "corrida_confirmacion": {
+    "n_confirmacion_por_escenario": 5,
+    "prediccion_optimo_modelo_ms": 69.914,
+    "ic95_prediccion_ms": [
+      56.932,
+      82.895
+    ],
+    "observado_optimo_media_ms": 70.934,
+    "observado_linea_base_media_ms": 336.963,
+    "dentro_intervalo_prediccion_95": true,
+    "mejora_tiempo_pct": 78.95,
+    "factor_aceleracion_speedup": 4.75,
+    "observado_optimo_disco_kb": 171.73,
+    "observado_linea_base_disco_kb": 1936.75,
+    "reduccion_disco_pct": 91.13,
+    "t_welch_confirmacion": 43.0076,
+    "p_valor_welch_confirmacion": 2.3731e-07,
+    "tasa_error_confirmacion_pct": 0.0
+  }
+}

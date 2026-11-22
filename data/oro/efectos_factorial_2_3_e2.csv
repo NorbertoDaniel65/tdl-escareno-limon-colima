@@ -1,0 +1,8 @@
+termino,descripcion,efecto_estimado_ms,efecto_absoluto_ms,estadistico_t,t_absoluto,p_valor,significativo_5pct
+C_formato,C: Formato Escritura (CSV vs Parquet),-126.151,126.151,-60.766,60.766,0.0,True
+B_validacion,B: Motor Validación (Iterativo vs Pandera),-123.784,123.784,-59.625,59.625,0.0,True
+A_paralelismo,A: Paralelismo I/O (1 vs 4 hilos),-8.287,8.287,-3.992,3.992,0.001337,True
+A_paralelismo:B_validacion,AB: Paralelismo × Validación,2.398,2.398,1.155,1.155,0.267387,False
+A_paralelismo:C_formato,AC: Paralelismo × Formato,-1.636,1.636,-0.788,0.788,0.4439,False
+B_validacion:C_formato,BC: Validación × Formato,-1.132,1.132,-0.545,0.545,0.5942,False
+A_paralelismo:B_validacion:C_formato,ABC: Interacción Triple,0.358,0.358,0.172,0.172,0.86568,False

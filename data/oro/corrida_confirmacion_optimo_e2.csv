@@ -1,0 +1,11 @@
+escenario,replica_confirmacion,A_paralelismo,B_validacion,C_formato,tiempo_total_ms,tamano_disco_kb,registros_procesados,registros_rechazados,tasa_error_pct
+"Linea_Base_E1 (A-,B-,C-)",1,-1,-1,-1,333.89,1936.75,14608,0,0.0
+"Linea_Base_E1 (A-,B-,C-)",2,-1,-1,-1,328.675,1936.75,14608,0,0.0
+"Linea_Base_E1 (A-,B-,C-)",3,-1,-1,-1,325.727,1936.75,14608,0,0.0
+"Linea_Base_E1 (A-,B-,C-)",4,-1,-1,-1,359.184,1936.75,14608,0,0.0
+"Linea_Base_E1 (A-,B-,C-)",5,-1,-1,-1,337.337,1936.75,14608,0,0.0
+Optimo_Confirmado (A+B+C+),1,1,1,1,67.095,171.73,14608,0,0.0
+Optimo_Confirmado (A+B+C+),2,1,1,1,75.629,171.73,14608,0,0.0
+Optimo_Confirmado (A+B+C+),3,1,1,1,68.797,171.73,14608,0,0.0
+Optimo_Confirmado (A+B+C+),4,1,1,1,68.055,171.73,14608,0,0.0
+Optimo_Confirmado (A+B+C+),5,1,1,1,75.094,171.73,14608,0,0.0

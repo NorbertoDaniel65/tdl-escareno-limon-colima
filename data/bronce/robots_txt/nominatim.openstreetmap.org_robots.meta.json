@@ -1,0 +1,7 @@
+{
+  "dominio": "nominatim.openstreetmap.org",
+  "robots_url": "https://nominatim.openstreetmap.org/robots.txt",
+  "http_status": 200,
+  "verificado_utc": "2026-11-22T16:21:13.781044+00:00",
+  "user_agent": "TDL-Observatorio-Limon-Colima/1.0 (proyecto academico TecNM Colima; contacto: 23460323@colima.tecnm.mx)"
+}
