@@ -1,0 +1,9 @@
+variable,temp_max_promedio_c,temp_min_promedio_c,dias_estres_termico_35c,precipitacion_acum_mm,evapotranspiracion_acum_mm,gdd_acumulado_mes,viento_max_extremo_kmh,radiacion_media_mj_m2
+temp_max_promedio_c,1.0,0.06,0.6872,-0.0149,0.465,0.3913,-0.0028,0.1923
+temp_min_promedio_c,0.06,1.0,-0.1803,0.4704,-0.2696,0.9061,0.3308,-0.2818
+dias_estres_termico_35c,0.6872,-0.1803,1.0,-0.1589,0.5521,0.0912,0.0644,0.3431
+precipitacion_acum_mm,-0.0149,0.4704,-0.1589,1.0,-0.3347,0.3275,0.3792,-0.2947
+evapotranspiracion_acum_mm,0.465,-0.2696,0.5521,-0.3347,1.0,0.0426,0.069,0.9296
+gdd_acumulado_mes,0.3913,0.9061,0.0912,0.3275,0.0426,1.0,0.3079,-0.0806
+viento_max_extremo_kmh,-0.0028,0.3308,0.0644,0.3792,0.069,0.3079,1.0,0.0474
+radiacion_media_mj_m2,0.1923,-0.2818,0.3431,-0.2947,0.9296,-0.0806,0.0474,1.0

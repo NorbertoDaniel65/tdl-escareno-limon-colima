@@ -7,7 +7,7 @@
 - **Asignaturas:**
   - **Ingeniería de Datos (`CMD-2602`):** Mtro. Armando Román Gallardo Heredia (`armando.gallardo@colima.tecnm.mx`)
   - **Análisis Estadístico para Ciencia de Datos:** Mtro. Mónico Joel Sánchez Velasco (`joel.sanchez@colima.tecnm.mx`)
-- **Estado actual:** **Entregas `E0`, `E1` y `E2` completadas y verificadas** (Etiquetas: [`e0`](docs/E0/ENTREGA.md) · [`e1`](docs/E1/ENTREGA.md) · [`e2`](docs/E2/ENTREGA.md)).
+- **Estado actual:** **Entregas `E0`, `E1`, `E2` y `E3` completadas y verificadas · Sello TDL Certificado (`6/6` criterios)** (Etiquetas: [`e0`](docs/E0/ENTREGA.md) · [`e1`](docs/E1/ENTREGA.md) · [`e2`](docs/E2/ENTREGA.md) · [`e3`](docs/E3/ENTREGA.md) · [`Datasheet CC BY 4.0`](docs/E3/datasheet.md)).
 
 ---
 
@@ -69,19 +69,23 @@ git clone https://github.com/NorbertoDaniel65/tdl-escareno-limon-colima.git
 cd tdl-escareno-limon-colima
 pip install -r requirements.txt
 
-# 2. Verificar automáticamente el cumplimiento íntegro de las Entregas E0, E1 y E2
+# 2. Verificar automáticamente el cumplimiento íntegro de las Entregas E0, E1, E2 y E3
 python -m pipeline.verificar_e0
 python -m pipeline.verificar_e1
 python -m pipeline.verificar_e2
+python -m pipeline.verificar_e3
 
-# 3. Reproducir pipeline E2 completo (Geoespacial, Linaje, DOE 2^3 / 2x3 / 2^4, ISO 25010/25012 y Figuras)
+# 3. Reproducir pipeline E2 y E3 completo (Geoespacial, Linaje, DOE 2^3, Optimización Parquet, PCA/MANOVA y Sello TDL)
 python -m pipeline.geoespacial_e2
 python -m pipeline.linaje_datos
 python -m pipeline.experimento_doe_e2
 python -m pipeline.evaluacion_iso_e2
-python -m pipeline.figuras_e2
+python -m pipeline.optimizacion_dataset_e3
+python -m pipeline.multivariado_pca_manova_e3
+python -m pipeline.calidad_sello_e3
+python -m pipeline.figuras_e3
 
-# 4. Ejecutar pruebas unitarias (27 pruebas E0 + E1 + E2)
+# 4. Ejecutar pruebas unitarias (35 pruebas E0 + E1 + E2 + E3)
 python -m pytest -v
 
 # 5. Ejecutar captura diaria en Capa Bronce o abrir Tablero E1+E2

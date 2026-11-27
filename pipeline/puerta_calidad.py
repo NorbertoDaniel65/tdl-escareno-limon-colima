@@ -19,8 +19,12 @@ from typing import Dict, List, Tuple
 
 import numpy as np
 import pandas as pd
-import pandera as pa
-from pandera import Check, Column, DataFrameSchema
+try:
+    import pandera.pandas as pa
+    from pandera.pandas import Check, Column, DataFrameSchema
+except ImportError:
+    import pandera as pa
+    from pandera import Check, Column, DataFrameSchema
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 BRONCE_DIR = ROOT_DIR / "data" / "bronce"

@@ -1,0 +1,59 @@
+{
+  "nombre_dataset": "CITRO-DATA LAB COLIMA — Dataset Maestro Agroclimático, Geoespacial y Comercial del Limón Mexicano (Capa Oro v3.0)",
+  "identificador": "tdl-colima-limon-oro-v3.0-e3",
+  "version": "3.0.0 (Etapa E3)",
+  "autor": "Norberto Daniel Escareño Montaño (No. Control: 23460323)",
+  "institucion": "Tecnológico Nacional de México — Instituto Tecnológico de Colima",
+  "licencia": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "licencia_url": "https://creativecommons.org/licenses/by/4.0/",
+  "datasheet_path": "docs/E3/datasheet.md",
+  "diccionario_path": "data/oro/diccionario_datos.md",
+  "cobertura_temporal": "2021-01 a 2025-12 (60 meses continuos) + pronóstico 2026-01 a 2026-12",
+  "cobertura_espacial": "Estado de Colima, México (Enfoque en 4 municipios citrícolas: Tecomán 06009, Armería 06001, Manzanillo 06007, Colima 06002) y 4 mercados mayoristas nacionales (Colima, Guadalajara, CDMX, Monterrey)",
+  "privacidad_pii": "0 columnas con datos personales (cumplimiento LFPDPPP verificado por pytest)",
+  "archivos_publicados": [
+    {
+      "archivo": "data/oro/CITRO_DATA_LAB_COLIMA_DATASET_ORO_v1.parquet",
+      "formato": "Apache Parquet (ZSTD)",
+      "filas": 240,
+      "columnas": 64,
+      "tamano_kb": 75.26,
+      "sha256": "ec7a70599b868c1a478871729a0d131541bd4b818b32a5971b9b50e10f19040c"
+    },
+    {
+      "archivo": "data/oro/CITRO_DATA_LAB_COLIMA_DATASET_ORO_v1.csv",
+      "formato": "CSV UTF-8",
+      "filas": 240,
+      "columnas": 64,
+      "tamano_kb": 215.12,
+      "sha256": "2b3e5fd2a357af939b64ff105fcb5e217d1dc51a1052a4d0aaa9d4f3a7d1ebb8"
+    },
+    {
+      "tabla": "serie_mensual_oro_60m",
+      "filas": 60,
+      "columnas": 35,
+      "csv_kb": 31.6,
+      "parquet_zstd_kb": 32.74,
+      "reduccion_disco_pct": -3.62,
+      "sha256_parquet": "7a21331cdb0c5deaf4a9ca111e2013dd3f5d24cc94b03cbdde050b7a2d8350a1"
+    },
+    {
+      "tabla": "panel_integrado_municipio_mercado_oro",
+      "filas": 240,
+      "columnas": 49,
+      "csv_kb": 195.05,
+      "parquet_zstd_kb": 61.08,
+      "reduccion_disco_pct": 68.68,
+      "sha256_parquet": "aff3966af24db9b5cddd763c32c948b0032f4fc2579a7a78058138c11e24bef2"
+    },
+    {
+      "tabla": "perfil_geoespacial_municipios_oro",
+      "filas": 10,
+      "columnas": 34,
+      "csv_kb": 5.51,
+      "parquet_zstd_kb": 24.72,
+      "reduccion_disco_pct": -348.86,
+      "sha256_parquet": "06896f88d90f6bbdb03eafa985fe57afdd7154dbb8af5c58af35c20c4d453633"
+    }
+  ]
+}

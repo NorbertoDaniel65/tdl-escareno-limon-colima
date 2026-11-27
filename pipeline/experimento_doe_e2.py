@@ -26,8 +26,12 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-import pandera as pa
-from pandera import Check, Column, DataFrameSchema
+try:
+    import pandera.pandas as pa
+    from pandera.pandas import Check, Column, DataFrameSchema
+except ImportError:
+    import pandera as pa
+    from pandera import Check, Column, DataFrameSchema
 from scipy import stats
 import statsmodels.api as sm
 import statsmodels.formula.api as smf

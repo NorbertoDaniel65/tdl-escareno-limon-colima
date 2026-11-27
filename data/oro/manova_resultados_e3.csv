@@ -1,0 +1,13 @@
+comparacion,factor_agrupacion,n_grupos,n_observaciones,p_variables,estadistico,valor,f_aprox,gl_num,gl_den,p_valor,eta2_parcial_multivariado,significativo_5pct
+MANOVA_A_Agroclima_4_Municipios_Colima,municipio,4,240,8,Wilks' lambda,0.070569,41.3967,24.0,664.77,6.778934431786448e-115,0.5868,True
+MANOVA_A_Agroclima_4_Municipios_Colima,municipio,4,240,8,Pillai's trace,1.333362,23.1009,24.0,693.0,1.2778283275544892e-72,0.4445,True
+MANOVA_A_Agroclima_4_Municipios_Colima,municipio,4,240,8,Hotelling-Lawley trace,7.811412,74.1863,24.0,489.02,4.375057576047054e-146,0.7225,True
+MANOVA_A_Agroclima_4_Municipios_Colima,municipio,4,240,8,Roy's greatest root,7.116831,205.4985,8.0,231.0,1.6906961339279679e-100,0.8768,True
+MANOVA_A_Robusto_YeoJohnson_4_Municipios,municipio,4,240,8,Wilks' lambda,0.055282,47.4648,24.0,664.77,8.50908649605139e-127,0.6191,True
+MANOVA_A_Robusto_YeoJohnson_4_Municipios,municipio,4,240,8,Pillai's trace,1.287729,21.7157,24.0,693.0,1.0141063237537817e-68,0.4292,True
+MANOVA_A_Robusto_YeoJohnson_4_Municipios,municipio,4,240,8,Hotelling-Lawley trace,11.38492,108.1246,24.0,489.02,2.560781876053222e-178,0.7914,True
+MANOVA_A_Robusto_YeoJohnson_4_Municipios,municipio,4,240,8,Roy's greatest root,10.912257,315.0914,8.0,231.0,1.1000267242396047e-119,0.9161,True
+MANOVA_B_Desempeno_Comercial_4_Mercados_SNIIM,id_mercado,4,240,5,Wilks' lambda,0.099117,55.9742,15.0,640.85,8.586396006312648e-106,0.5372,True
+MANOVA_B_Desempeno_Comercial_4_Mercados_SNIIM,id_mercado,4,240,5,Pillai's trace,0.908806,20.3387,15.0,702.0,8.682723209051438e-46,0.3029,True
+MANOVA_B_Desempeno_Comercial_4_Mercados_SNIIM,id_mercado,4,240,5,Hotelling-Lawley trace,9.009205,138.7821,15.0,433.02,1.0376378226888088e-154,0.7502,True
+MANOVA_B_Desempeno_Comercial_4_Mercados_SNIIM,id_mercado,4,240,5,Roy's greatest root,9.000339,421.2159,5.0,234.0,8.23798821555232e-115,0.9,True

@@ -1,0 +1,7 @@
+id_criterio,criterio_sello_tdl,umbral_minimo_oficial,resultado_medido_observatorio,valor_numerico,cumple,evidencia_verificable
+SELLO-01,Disponibilidad medida de la captura,≥ 95% en los últimos 14 días,99.85% disponibilidad A = MTBF/(MTBF+MTTR) en 336 h (100.0% éxito en las 18/18 corridas post-parche AUD-01),99.85,True,calidad/bitacora_capturas.jsonl | .github/workflows/captura-bronce.yml
+SELLO-02,Completitud de la Capa Oro (ISO/IEC 25012),≥ 95%,"100.0% (29,560/29,560 celdas válidas, 0 valores nulos)",100.0,True,data/oro/CITRO_DATA_LAB_COLIMA_DATASET_ORO_v1.parquet | data/oro/evaluacion_iso_25012_e2.csv
+SELLO-03,Cobertura de pruebas automáticas,≥ 60%,88.4% cobertura sobre módulos core (35 pruebas automatizadas pytest en CI),88.4,True,tests/ | .github/workflows/ci-calidad.yml
+SELLO-04,Secretos expuestos en el repositorio,0,0 secretos expuestos en 208 archivos auditados + 0 PII,0.0,True,pipeline/calidad_sello_e3.py | docs/etica-datos.md
+SELLO-05,Hallazgos críticos de auditoría abiertos,0,0 críticos abiertos y 0 mayores/menores abiertos (5/5 hallazgos AUD-01..AUD-05 cerrados con evidencia),0.0,True,data/oro/cierre_auditoria_e3.csv | docs/calidad-modelos-psp-sello-e3.md
+SELLO-06,Reproducibilidad,Un tercero clona el repositorio y obtiene los mismos resultados,"100% determinista (semilla=23460323, verificadores verificar_e0..e3.py y CI multi-OS en verde)",100.0,True,pipeline/verificar_e0.py .. pipeline/verificar_e3.py | README.md

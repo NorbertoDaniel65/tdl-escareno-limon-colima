@@ -1,0 +1,9 @@
+variable,etiqueta_negocio,peso_vector_PC1,peso_vector_PC2,peso_vector_PC3,carga_corr_PC1,carga_corr_PC2,carga_corr_PC3,comunalidad_PC1_PC2,comunalidad_PC1_PC3
+temp_max_promedio_c,T. Máxima Media (°C),0.2617,0.4173,-0.4823,0.4446,0.6437,-0.5024,0.6121,0.8645
+temp_min_promedio_c,T. Mínima Media (°C),-0.3724,0.4364,-0.0082,-0.6327,0.6732,-0.0085,0.8536,0.8537
+dias_estres_termico_35c,Días Estrés ≥35°C,0.3799,0.298,-0.2965,0.6453,0.4597,-0.3089,0.6278,0.7232
+precipitacion_acum_mm,Precipitación Acum. (mm),-0.3485,0.2486,0.1727,-0.5921,0.3835,0.1799,0.4976,0.53
+evapotranspiracion_acum_mm,Evapotranspiración ET0 (mm),0.5096,0.2319,0.2637,0.8658,0.3578,0.2746,0.8776,0.953
+gdd_acumulado_mes,Grados-Día Citrícolas (GDD),-0.1953,0.5561,-0.1124,-0.3318,0.8579,-0.117,0.8462,0.8599
+viento_max_extremo_kmh,Viento Máx. Extremo (km/h),-0.1244,0.3259,0.5947,-0.2114,0.5028,0.6195,0.2975,0.6813
+radiacion_media_mj_m2,Radiación Solar (MJ/m²),0.4623,0.1249,0.4623,0.7853,0.1928,0.4815,0.6539,0.8857

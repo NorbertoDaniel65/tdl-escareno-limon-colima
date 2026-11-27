@@ -24,6 +24,7 @@ PLATA_DIR = ROOT_DIR / "data" / "plata"
 CUARENTENA_DIR = ROOT_DIR / "data" / "cuarentena"
 FIGURAS_E1_DIR = ROOT_DIR / "docs" / "E1" / "figuras"
 FIGURAS_E2_DIR = ROOT_DIR / "docs" / "E2" / "figuras"
+FIGURAS_E3_DIR = ROOT_DIR / "docs" / "E3" / "figuras"
 LOGO_PATH = ROOT_DIR / "tablero" / "assets" / "logo_citrodata.png"
 REPO_URL = "https://github.com/NorbertoDaniel65/tdl-escareno-limon-colima"
 
@@ -585,6 +586,19 @@ confirmacion = cargar_csv("data/oro/corrida_confirmacion_optimo_e2.csv")
 alias_2_4 = cargar_csv("data/oro/estructura_alias_2_4_fraccionado_e2.csv")
 iso_25010 = cargar_csv("data/oro/evaluacion_iso_25010_e2.csv")
 iso_25012 = cargar_csv("data/oro/evaluacion_iso_25012_e2.csv")
+pca_scree = cargar_csv("data/oro/pca_varianza_explicada_e3.csv")
+pca_cargas = cargar_csv("data/oro/pca_cargas_variables_e3.csv")
+pca_proy = cargar_csv("data/oro/pca_proyecciones_municipios_mercados_e3.csv")
+pca_cent = cargar_csv("data/oro/pca_centroides_municipios_e3.csv")
+qq_maha = cargar_csv("data/oro/distancias_mahalanobis_qq_e3.csv")
+manova_e3 = cargar_csv("data/oro/manova_resultados_e3.csv")
+comp_anovas_e3 = cargar_csv("data/oro/comparativa_manova_vs_anovas_e3.csv")
+bench_opt_e3 = cargar_csv("data/oro/benchmark_etapas_optimizacion_e3.csv")
+cierre_aud_e3 = cargar_csv("data/oro/cierre_auditoria_e3.csv")
+auto_modelos_e3 = cargar_csv("data/oro/autoevaluacion_moprosoft_cmmi_e3.csv")
+comp_modelos_proc_e3 = cargar_csv("data/oro/comparativa_modelos_proceso_e3.csv")
+retro_psp_e3 = cargar_csv("data/oro/retrospectiva_psp_e0_e3.csv")
+sello_tdl_e3 = cargar_csv("data/oro/sello_tdl_evaluacion_e3.csv")
 
 rep_puerta = cargar_json("data/cuarentena/reporte_puerta_calidad.json")
 diag_ts = cargar_json("data/oro/diagnostico_series_tiempo_e1.json")
@@ -592,6 +606,9 @@ res_geo = cargar_json("data/oro/resumen_geoespacial_e2.json")
 res_linaje = cargar_json("data/oro/linaje_datos_e2.json")
 res_doe = cargar_json("data/oro/resumen_experimento_doe_e2.json")
 res_iso = cargar_json("data/oro/resumen_evaluacion_iso_e2.json")
+res_mv_e3 = cargar_json("data/oro/resumen_multivariado_e3.json")
+res_opt_e3 = cargar_json("data/oro/resumen_optimizacion_e3.json")
+res_sello_e3 = cargar_json("data/oro/resumen_calidad_sello_e3.json")
 
 ganador = comp_modelos.iloc[0]
 conf = res_doe["corrida_confirmacion"]
@@ -624,23 +641,24 @@ html(
         </div>
       </div>
       <div class="cd-nav-meta">
-        <span class="cd-live"><span class="cd-live-dot"></span>Operando · {res_iso['fiabilidad_acumulada_e0_e2']['disponibilidad_real_pct']}% disponibilidad</span>
+        <span class="cd-live"><span class="cd-live-dot"></span>Sello TDL Certificado (6/6) · {res_sello_e3['disponibilidad_14_dias']['disponibilidad_real_14d_pct']}% disp. 14d</span>
         <span class="cd-author">Norberto Escareño · 23460323</span>
-        <a class="cd-link-btn" href="{REPO_URL}" target="_blank">GitHub (E2) ↗</a>
+        <a class="cd-link-btn" href="{REPO_URL}" target="_blank">GitHub (E3) ↗</a>
       </div>
     </div>
     """
 )
 
-# 6 pestañas claras en una sola línea horizontal
-tab_resumen, tab_precios, tab_mapa, tab_linaje, tab_doe, tab_calidad = st.tabs(
+# 7 pestañas claras en una sola línea horizontal (incluyendo Mapa PCA E3 y Sello TDL)
+tab_resumen, tab_precios, tab_mapa, tab_pca, tab_linaje, tab_doe, tab_calidad = st.tabs(
     [
         "Resumen",
         "Precios 2026",
         "Mapa Colima",
+        "Mapa PCA",
         "Linaje",
         "Experimento 2³",
-        "Calidad y Ética",
+        "Calidad y Sello",
     ]
 )
 
@@ -649,17 +667,18 @@ tab_resumen, tab_precios, tab_mapa, tab_linaje, tab_doe, tab_calidad = st.tabs(
 # ===========================================================================
 with tab_resumen:
     logo_snap = f'<img src="{logo_src}" style="width:42px;height:42px;border-radius:11px;" alt="CITRO-DATA"/>' if logo_src else ""
+    mej_e3 = res_opt_e3["mejoras_cuantificadas"]
     html(
         f"""
         <div class="cd-home-split">
           <div class="cd-hero-left">
             <div>
               <div class="cd-hero-bar"></div>
-              <div class="cd-hero-kicker">Observatorio Citrícola · Valle de Tecomán, Armería, Manzanillo y Colima</div>
+              <div class="cd-hero-kicker">Observatorio Citrícola Certificado (Sello TDL 6/6) · Tecomán, Armería, Manzanillo y Colima</div>
               <h1 class="cd-hero-h1">Decide <span>cuándo cortar</span> y hacia dónde enviar tu limón.</h1>
               <p class="cd-hero-p">
-                Reunimos clima histórico de Colima, precios mayoristas oficiales de SNIIM e infraestructura real en mapa
-                para que empacadoras y productores negocien con números verificados en lugar de rumores.
+                Reunimos clima histórico de Colima, precios mayoristas oficiales de SNIIM, infraestructura geoespacial
+                y perfiles multivariados (PCA y MANOVA) para que empacadoras y productores negocien con números certificados.
               </p>
             </div>
             <div class="cd-hero-highlights">
@@ -680,9 +699,9 @@ with tab_resumen:
             <div class="cd-snap-header">
               {logo_snap}
               <div>
-                <div class="cd-kicker">Estado del observatorio · E1 + E2</div>
+                <div class="cd-kicker">Estado del observatorio · E1 + E2 + E3</div>
                 <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.12rem;color:{PETROL};">
-                  Indicadores clave listos para decidir
+                  Sello TDL Certificado · 6 / 6 Criterios
                 </div>
               </div>
             </div>
@@ -693,19 +712,19 @@ with tab_resumen:
                 <div class="ss">Error MAPE {ganador['MAPE_test_pct']:.2f}% en 2025</div>
               </div>
               <div class="cd-snap-item" style="--c:{PETROL}">
-                <div class="sk">Nodos en Colima</div>
-                <div class="sv num">{ap_geo:,}</div>
-                <div class="ss">0 PII · {len(cuarentena_geo)} en cuarentena</div>
+                <div class="sk">Mapa PCA + MANOVA</div>
+                <div class="sv num">{res_mv_e3['pca']['varianza_acumulada_3pc_pct']:.1f}%</div>
+                <div class="ss">Varianza 3 PC · Wilks p&lt;1e-105</div>
               </div>
               <div class="cd-snap-item" style="--c:{BRISA}">
-                <div class="sk">Linaje Capa Oro</div>
-                <div class="sv num">{res_linaje['cobertura_trazabilidad_pct']:.0f}%</div>
-                <div class="ss">{res_linaje['total_registros_oro_rastreados']} registros rastreables</div>
+                <div class="sk">Linaje &amp; Capa Oro</div>
+                <div class="sv num">100%</div>
+                <div class="ss">310 registros · CC BY 4.0 Parquet</div>
               </div>
               <div class="cd-snap-item" style="--c:{CACAO}">
-                <div class="sk">Calidad & Velocidad</div>
-                <div class="sv num">{conf['factor_aceleracion_speedup']}×</div>
-                <div class="ss">ISO {res_iso['iso_25010_promedio_100']:.0f}/{res_iso['iso_25012_promedio_100']:.0f} · -{conf['reduccion_disco_pct']}% disco</div>
+                <div class="sk">Optimización E3</div>
+                <div class="sv num">{mej_e3['factor_aceleracion_speedup']}×</div>
+                <div class="ss">-{mej_e3['reduccion_tiempo_total_pct']}% tiempo · -{mej_e3['reduccion_disco_zstd_pct']}% disco</div>
               </div>
             </div>
           </div>
@@ -722,15 +741,15 @@ with tab_resumen:
           <div class="cd-step">
             <div class="cd-step-num">02</div>
             <div>
-              <h4>Evalúa rutas y zonas</h4>
-              <p>Explora <b>Mapa Colima</b> para ubicar huertas, bodegas y distancias al Puerto de Manzanillo y Autopista 54D.</p>
+              <h4>Explora el Mapa Colima y Mapa PCA</h4>
+              <p>Ubica huertas y bodegas en <b>Mapa Colima</b> y compara el perfil bioclimático multivariado en <b>Mapa PCA</b>.</p>
             </div>
           </div>
           <div class="cd-step">
             <div class="cd-step-num">03</div>
             <div>
-              <h4>Audita la confianza</h4>
-              <p>Revisa <b>Linaje</b> y <b>Calidad y Ética</b> para confirmar el origen SHA-256 y los {total_cuarentena} datos apartados en cuarentena.</p>
+              <h4>Verifica el Sello TDL y Datasheet</h4>
+              <p>Revisa <b>Calidad y Sello</b> para auditar los 6 criterios del Sello TDL, la optimización Parquet y el cierre de auditoría.</p>
             </div>
           </div>
         </div>
@@ -1080,6 +1099,229 @@ with tab_mapa:
         st.image(str(FIGURAS_E2_DIR / "fig1_mapa_geoespacial_colima_e2.png"), width="stretch")
 
 # ===========================================================================
+# PESTAÑA 4 · MAPA MULTIVARIADO (PCA, NORMALIDAD Y MANOVA · ENTREGA E3)
+# ===========================================================================
+with tab_pca:
+    m_mun_e3 = res_mv_e3["manova"]["municipios_agroclima_escala_original"]
+    m_mkt_e3 = res_mv_e3["manova"]["mercados_mayoristas_sniim"]
+    norm_yj = res_mv_e3["normalidad_multivariada_puerta3"]["transformacion_yeo_johnson"]
+
+    titulo_vista(
+        "ANÁLISIS MULTIVARIADO UNIDAD 5 · PCA, NORMALIDAD Y MANOVA (E3)",
+        "Mapa multivariado de componentes principales y perfiles bioclimáticos",
+        "Proyección de 8 variables continuas en los dos primeros componentes principales (65.83% de varianza en PC1+PC2; 79.39% en PC1..PC3) y contraste MANOVA simultáneo sobre los 4 municipios y las 4 centrales de abasto.",
+        pill(f"Wilks Λ = {m_mun_e3['wilks_lambda']:.4f} · Pillai V = {m_mun_e3['pillai_traza']:.4f}", "terracota"),
+    )
+
+    html(
+        f"""
+        <div class="cd-metric-grid">
+          {metric_box("Varianza PC1 + PC2", f"{res_mv_e3['pca']['varianza_acumulada_2pc_pct']}%", f"3 PCs (Kaiser λ>1) = {res_mv_e3['pca']['varianza_acumulada_3pc_pct']}%", PETROL)}
+          {metric_box("MANOVA 4 Municipios", f"Λ = {m_mun_e3['wilks_lambda']:.4f}", f"F = {m_mun_e3['wilks_f']:.1f} · p < 1e-114 · Perm p = {m_mun_e3['permutacion_pillai_p_valor']}", TERRACOTA)}
+          {metric_box("MANOVA 4 Mercados", f"Λ = {m_mkt_e3['wilks_lambda']:.4f}", f"Pillai V = {m_mkt_e3['pillai_traza']:.3f} · p < 1e-105", CACAO)}
+          {metric_box("Puerta 3 · Q-Q Mahalanobis", f"r = {norm_yj['correlacion_qq_mahalanobis']:.4f}", f"Mardia Curtosis p = {norm_yj['mardia_p_curtosis']:.3f} ✓ ({norm_yj['pct_dentro_chi2_95']:.1f}% en Chi²)", BRISA)}
+        </div>
+        """
+    )
+
+    # Guía clara de interpretación de negocio para el cliente citrícola
+    cb1, cb2 = st.columns(2)
+    with cb1:
+        html(
+            f"""
+            <div class="cd-card" style="border-left:5px solid {TERRACOTA};">
+              {pill("Eje Horizontal · PC1 (36.08% varianza · λ = 2.89)", "terracota")}
+              <h4 style="margin:8px 0 4px 0;color:{PETROL};font-size:1.05rem;">{res_mv_e3['pca']['nombres_negocio']['PC1']}</h4>
+              <p style="font-size:.84rem;color:{TEXTO_SUAVE};margin:0;">
+                Hacia la <b>derecha (+PC1)</b> aumentan la demanda evaporativa (<b>ET0</b>), la radiación solar, los grados-día (<b>GDD</b>) y los días de calor extremo (<b>≥35°C</b>).
+                <b>Lectura para el productor:</b> cuando una zona entra en <b>+PC1 con sequía (-PC2)</b> (cuadrante inferior derecho), el árbol sufre estrés floral y 6 a 8 semanas después escasea el limón #5, disparando el precio mayorista.
+              </p>
+            </div>
+            """
+        )
+    with cb2:
+        html(
+            f"""
+            <div class="cd-card" style="border-left:5px solid {PETROL};">
+              {pill("Eje Vertical · PC2 (29.75% varianza · λ = 2.38)", "agua")}
+              <h4 style="margin:8px 0 4px 0;color:{PETROL};font-size:1.05rem;">{res_mv_e3['pca']['nombres_negocio']['PC2']}</h4>
+              <p style="font-size:.84rem;color:{TEXTO_SUAVE};margin:0;">
+                Hacia <b>arriba (+PC2)</b> aumentan la precipitación pluvial acumulada y las noches cálidas-húmedas de verano–otoño.
+                <b>Lectura para la empacadora:</b> valores altos en <b>+PC2</b> marcan la temporada de lluvias y cosecha pico (julio–octubre): abunda el volumen en báscula, baja el precio spot en Colima y conviene enviar a Guadalajara/Monterrey o desviar segunda a aceite esencial.
+              </p>
+            </div>
+            """
+        )
+    st.write("")
+
+    fp1, fp2 = st.columns([1.3, 1])
+    muns_pca_disp = sorted(pca_proy["municipio"].unique())
+    with fp1:
+        muns_pca_sel = st.multiselect("Filtrar municipios en el Mapa Multivariado (Biplot):", muns_pca_disp, default=muns_pca_disp)
+    with fp2:
+        color_modo_pca = st.selectbox(
+            "Colorear observaciones por:",
+            ["Municipio citrícola (4 grupos MANOVA)", "Cuadrante de decisión comercial", "Rango de precio del limón (MXN/kg)"],
+        )
+
+    sub_pca = pca_proy[pca_proy["municipio"].isin(muns_pca_sel)].copy()
+    if color_modo_pca == "Municipio citrícola (4 grupos MANOVA)":
+        col_enc = alt.Color(
+            "municipio:N",
+            title="Municipio",
+            scale=alt.Scale(domain=["Tecoman", "Armeria", "Manzanillo", "Colima"], range=[TERRACOTA, PETROL, "#2A8C9E", CACAO]),
+            legend=alt.Legend(orient="top"),
+        )
+    elif color_modo_pca == "Cuadrante de decisión comercial":
+        col_enc = alt.Color(
+            "cuadrante_negocio_biplot:N",
+            title="Cuadrante operativo",
+            scale=alt.Scale(range=[TERRACOTA, PETROL, "#2A8C9E", ARENA]),
+            legend=alt.Legend(orient="top", columns=2, labelLimit=340),
+        )
+    else:
+        col_enc = alt.Color(
+            "rango_precio_limon:N",
+            title="Rango precio",
+            scale=alt.Scale(range=[ARENA, PETROL, TERRACOTA, CACAO]),
+            legend=alt.Legend(orient="top"),
+        )
+
+    # Vectores de carga reescalados para el Biplot interactivo
+    vec_df = pca_cargas.copy()
+    vec_df["x0"] = 0.0
+    vec_df["y0"] = 0.0
+    vec_df["vx"] = vec_df["carga_corr_PC1"] * 3.1
+    vec_df["vy"] = vec_df["carga_corr_PC2"] * 3.1
+
+    regla_h = alt.Chart(pd.DataFrame({"y": [0.0]})).mark_rule(strokeDash=[4, 4], color="#9BA8AC").encode(y="y:Q")
+    regla_v = alt.Chart(pd.DataFrame({"x": [0.0]})).mark_rule(strokeDash=[4, 4], color="#9BA8AC").encode(x="x:Q")
+
+    pts_biplot = alt.Chart(sub_pca).mark_circle(size=72, opacity=0.82, stroke="white", strokeWidth=0.6).encode(
+        x=alt.X("PC1_estres_termo_evaporativo:Q", title="PC1 (36.08%): Índice de Estrés Termo-Evaporativo y Calor Citrícola"),
+        y=alt.Y("PC2_humedad_pluvial_costera:Q", title="PC2 (29.75%): Índice de Humedad Pluvial Tropical y Moderación Costera"),
+        color=col_enc,
+        tooltip=[
+            alt.Tooltip("anio_mes:N", title="Mes"),
+            alt.Tooltip("municipio:N", title="Municipio"),
+            alt.Tooltip("zona:N", title="Zona"),
+            alt.Tooltip("PC1_estres_termo_evaporativo:Q", title="PC1 (Calor/ET0)", format=".2f"),
+            alt.Tooltip("PC2_humedad_pluvial_costera:Q", title="PC2 (Humedad/Lluvia)", format=".2f"),
+            alt.Tooltip("precio_frecuente_origen_colima_mxn_kg:Q", title="Precio Colima (MXN/kg)", format="$.2f"),
+            alt.Tooltip("cuadrante_negocio_biplot:N", title="Diagnóstico comercial"),
+        ],
+    )
+
+    cent_sub = pca_cent[pca_cent["municipio"].isin(muns_pca_sel)].copy()
+    pts_cent = alt.Chart(cent_sub).mark_point(shape="diamond", size=240, filled=True, color=CACAO, stroke="white", strokeWidth=1.5).encode(
+        x="PC1_media:Q",
+        y="PC2_media:Q",
+        tooltip=[
+            alt.Tooltip("municipio:N", title="Centroide Municipal"),
+            alt.Tooltip("PC1_media:Q", title="PC1 medio", format=".3f"),
+            alt.Tooltip("PC2_media:Q", title="PC2 medio", format=".3f"),
+            alt.Tooltip("PC3_media:Q", title="PC3 medio", format=".3f"),
+        ],
+    )
+    txt_cent = alt.Chart(cent_sub).mark_text(dy=-13, fontWeight="bold", fontSize=11, color=PETROL).encode(
+        x="PC1_media:Q", y="PC2_media:Q", text="municipio:N"
+    )
+
+    seg_vec = alt.Chart(vec_df).mark_rule(color=CACAO, strokeWidth=2.0, opacity=0.85).encode(
+        x="x0:Q", y="y0:Q", x2="vx:Q", y2="vy:Q"
+    )
+    punta_vec = alt.Chart(vec_df).mark_circle(size=55, color=CACAO).encode(
+        x="vx:Q",
+        y="vy:Q",
+        tooltip=[
+            alt.Tooltip("etiqueta_negocio:N", title="Variable bioclimática"),
+            alt.Tooltip("carga_corr_PC1:Q", title="Correlación con PC1", format=".3f"),
+            alt.Tooltip("carga_corr_PC2:Q", title="Correlación con PC2", format=".3f"),
+            alt.Tooltip("carga_corr_PC3:Q", title="Correlación con PC3", format=".3f"),
+        ],
+    )
+    txt_vec = alt.Chart(vec_df).mark_text(dy=-9, fontSize=10, fontWeight="bold", color=CACAO).encode(
+        x="vx:Q", y="vy:Q", text="etiqueta_negocio:N"
+    )
+
+    st.altair_chart(
+        estilo_altair(
+            alt.layer(regla_h, regla_v, pts_biplot, seg_vec, punta_vec, txt_vec, pts_cent, txt_cent)
+            .properties(height=450, title="Mapa Multivariado (Biplot PC1 vs. PC2 · Observaciones, Vectores de Variables y Centroides Municipales)")
+            .interactive()
+        ),
+        width="stretch",
+    )
+    st.caption("◆ rombos oscuros: centroides de los 4 municipios · Líneas cacao: vectores de carga de las 8 variables bioclimáticas. Colima capital destaca en +PC1 (mayor calor diurno y días ≥35°C), mientras Manzanillo y Tecomán muestran moderación costera y brisa del Pacífico.")
+
+    g_scree, g_qq = st.columns(2)
+    with g_scree:
+        bar_sc = alt.Chart(pca_scree, title="Gráfica de sedimentación (Scree Plot) y criterio de Kaiser (λ ≥ 1)").mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
+            x=alt.X("componente:N", sort=pca_scree["componente"].tolist(), title=None),
+            y=alt.Y("eigenvalor_lambda:Q", title="Eigenvalor (λ)"),
+            color=alt.condition(alt.datum.cumple_kaiser_lambda_mayor_1, alt.value(TERRACOTA), alt.value(ARENA)),
+            tooltip=[
+                alt.Tooltip("componente:N", title="Componente"),
+                alt.Tooltip("nombre_negocio:N", title="Índice de negocio"),
+                alt.Tooltip("eigenvalor_lambda:Q", title="Eigenvalor λ", format=".3f"),
+                alt.Tooltip("varianza_explicada_pct:Q", title="Varianza (%)", format=".2f"),
+                alt.Tooltip("varianza_acumulada_pct:Q", title="Acumulada (%)", format=".2f"),
+            ],
+        )
+        regla_k = alt.Chart(pd.DataFrame({"k": [1.0]})).mark_rule(color=CACAO, strokeDash=[5, 4], strokeWidth=2).encode(y="k:Q")
+        st.altair_chart(estilo_altair((bar_sc + regla_k).properties(height=280)), width="stretch")
+
+    with g_qq:
+        qq_long = pd.concat(
+            [
+                qq_maha[["cuantil_chi2_teorico_gl8", "mahalanobis_d2_original", "anio_mes", "municipio"]]
+                .rename(columns={"mahalanobis_d2_original": "d2"})
+                .assign(escala="1. Escala original (r = 0.8422)"),
+                qq_maha[["cuantil_chi2_teorico_gl8", "mahalanobis_d2_yeo_johnson_ordenado", "anio_mes", "municipio"]]
+                .rename(columns={"mahalanobis_d2_yeo_johnson_ordenado": "d2"})
+                .assign(escala="2. Yeo-Johnson Puerta 3 (r = 0.9986)"),
+            ],
+            ignore_index=True,
+        )
+        pts_qq = alt.Chart(qq_long, title="Normalidad Multivariada · Gráfica Q-Q de Distancias de Mahalanobis").mark_circle(size=45, opacity=0.8).encode(
+            x=alt.X("cuantil_chi2_teorico_gl8:Q", title="Cuantil teórico Chi-cuadrada (gl = 8)"),
+            y=alt.Y("d2:Q", title="Distancia cuadrada de Mahalanobis D²"),
+            color=alt.Color("escala:N", scale=alt.Scale(range=[ARENA, PETROL]), legend=alt.Legend(title=None, orient="bottom")),
+            tooltip=[alt.Tooltip("escala:N", title="Escala"), alt.Tooltip("cuantil_chi2_teorico_gl8:Q", title="Chi² teórico", format=".2f"), alt.Tooltip("d2:Q", title="Mahalanobis D²", format=".2f")],
+        )
+        linea_id = alt.Chart(pd.DataFrame({"x": [0.0, 24.0], "y": [0.0, 24.0]})).mark_line(color=TERRACOTA, strokeDash=[5, 4], strokeWidth=2).encode(x="x:Q", y="y:Q")
+        st.altair_chart(estilo_altair((pts_qq + linea_id).properties(height=280)), width="stretch")
+
+    st.markdown("##### Contraste MANOVA (Lambda de Wilks y Traza de Pillai) vs. ANOVAs Univariados Separados")
+    cm1, cm2 = st.columns([1.15, 1])
+    with cm1:
+        st.dataframe(
+            manova_e3[["comparacion", "estadistico", "valor", "f_aprox", "gl_num", "gl_den", "p_valor", "eta2_parcial_multivariado"]],
+            hide_index=True,
+            width="stretch",
+            height=310,
+        )
+    with cm2:
+        st.dataframe(
+            comp_anovas_e3[["etiqueta_negocio", "f_univariado", "p_valor_univariado", "p_valor_bonferroni", "eta2_univariado", "significativo_con_bonferroni"]],
+            hide_index=True,
+            width="stretch",
+            height=310,
+        )
+    st.info(
+        f"**¿Por qué MANOVA no es lo mismo que correr 8 ANOVAs separados?** Correr $p=8$ ANOVAs independientes a $\\alpha=0.05$ "
+        f"infla la probabilidad de cometer al menos un falso positivo (Error Tipo I global) a **$1 - (1 - 0.05)^8 = 33.66\\%$** e ignora "
+        f"la correlación entre temperatura, radiación, $ET_0$ y viento. El MANOVA evalúa el vector conjunto en un solo contraste "
+        f"manteniendo $\\alpha = 5.0\\%$ exacto y demostrando diferencias significativas entre municipios ($\\Lambda = {m_mun_e3['wilks_lambda']:.4f}, p < 10^{{-114}}$) "
+        f"y entre centrales mayoristas ($\\Lambda = {m_mkt_e3['wilks_lambda']:.4f}, p < 10^{{-105}}$)."
+    )
+    with st.expander("Ver las 3 figuras estáticas HD de análisis multivariado del reporte E3"):
+        st.image(str(FIGURAS_E3_DIR / "fig1_matriz_correlaciones_y_qq_mahalanobis_e3.png"), width="stretch")
+        st.image(str(FIGURAS_E3_DIR / "fig2_pca_sedimentacion_y_biplot_municipios_e3.png"), width="stretch")
+        st.image(str(FIGURAS_E3_DIR / "fig3_manova_municipios_mercados_vs_anovas_e3.png"), width="stretch")
+
+
+# ===========================================================================
 # PESTAÑA 4 · LINAJE
 # ===========================================================================
 with tab_linaje:
@@ -1242,15 +1484,100 @@ with tab_doe:
         st.image(str(FIGURAS_E2_DIR / "fig5_fraccionado_2_4_y_confirmacion_optimo.png"), width="stretch")
 
 # ===========================================================================
-# PESTAÑA 6 · CALIDAD, ÉTICA Y CUARENTENA
+# PESTAÑA 7 · CALIDAD, SELLO TDL, OPTIMIZACIÓN PARQUET, ÉTICA Y CUARENTENA
 # ===========================================================================
 with tab_calidad:
+    mej_opt = res_opt_e3["mejoras_cuantificadas"]
+    disp_14 = res_sello_e3["disponibilidad_14_dias"]
+    retro_res = res_sello_e3["retrospectiva_psp"]
+
     titulo_vista(
-        "CONFIANZA CERTIFICADA · ÉTICA, ISO 25010–25012 Y CUARENTENA",
-        "Calidad del sistema, ética legal y puerta de datos",
-        "Auditoría de licencias y privacidad (0 PII), calificaciones medidas bajo normas ISO y registro transparente de los 101 datos retenidos en cuarentena.",
-        pill(f"ISO {res_iso['iso_25010_promedio_100']:.1f} / {res_iso['iso_25012_promedio_100']:.1f}", "petrol"),
+        "CERTIFICACIÓN SELLO TDL (6/6) · OPTIMIZACIÓN PARQUET, MOPROSOFT/CMMI, PSP, ÉTICA E ISO",
+        "Sello TDL Certificado, optimización del pipeline y calidad integral",
+        "Cumplimiento verificado de los 6 criterios del Sello TDL, aceleración 12.15× con Apache Parquet (CC BY 4.0), cierre del 100% de hallazgos de auditoría, autoevaluación MoProSoft/CMMI y retrospectiva PSP E0→E3.",
+        pill("✓ SELLO TDL CERTIFICADO · 6 / 6 CRITERIOS", "terracota"),
     )
+
+    # 0. Tarjeta destacada del Sello TDL + Optimización Medida E3
+    html(
+        f"""
+        <div class="cd-metric-grid">
+          {metric_box("Sello TDL Oficial", "6 / 6 ✓", f"Disponibilidad 14d: {disp_14['disponibilidad_real_14d_pct']}% (≥95%)", TERRACOTA)}
+          {metric_box("Aceleración Pipeline E3", f"{mej_opt['factor_aceleracion_speedup']}×", f"-{mej_opt['reduccion_tiempo_total_pct']}% tiempo (4,253 → 350 ms)", PETROL)}
+          {metric_box("Ahorro RAM & Disco", f"-{mej_opt['reduccion_disco_zstd_pct']}%", f"Parquet ZSTD · -{mej_opt['reduccion_memoria_pico_pct']}% RAM pico", BRISA)}
+          {metric_box("Auditoría & PSP E3", "0 abiertos", f"5/5 hallazgos cerrados · Yield E3 = 100%", CACAO)}
+        </div>
+        """
+    )
+
+    st.markdown("##### Certificación Oficial del Sello TDL (6 / 6 Criterios Aprobados con Evidencia)")
+    st.dataframe(
+        sello_tdl_e3[["id_criterio", "criterio_sello_tdl", "umbral_minimo_oficial", "resultado_medido_observatorio", "cumple", "evidencia_verificable"]],
+        hide_index=True,
+        width="stretch",
+        column_config={
+            "id_criterio": st.column_config.TextColumn("ID"),
+            "criterio_sello_tdl": st.column_config.TextColumn("Criterio Oficial Sello TDL"),
+            "umbral_minimo_oficial": st.column_config.TextColumn("Umbral Mínimo"),
+            "resultado_medido_observatorio": st.column_config.TextColumn("Resultado Medido en CITRO-DATA LAB", width="large"),
+            "cumple": st.column_config.CheckboxColumn("Cumple"),
+            "evidencia_verificable": st.column_config.TextColumn("Evidencia en Repositorio"),
+        },
+    )
+
+    co1, co2 = st.columns(2)
+    with co1:
+        b_plot = bench_opt_e3.copy()
+        b_plot["Escenario"] = b_plot["escenario"].map(
+            {
+                "1_Antes_Linea_Base_E1_CSV": "1. Antes (E1 · CSV secuencial)",
+                "2_Despues_Optimizado_E3_Parquet_Snappy": "2. Después (E3 · Parquet Snappy)",
+                "3_Despues_Optimizado_E3_Parquet_ZSTD": "3. Después (E3 · Parquet ZSTD)",
+            }
+        )
+        graf_opt = alt.Chart(b_plot, title="Optimización Medida del Pipeline Antes vs. Después (ms, n = 10)").mark_bar(cornerRadiusEnd=6).encode(
+            y=alt.Y("Escenario:N", sort="x", title=None),
+            x=alt.X("tiempo_total_medio_ms:Q", title="Tiempo total medio (ms)"),
+            color=alt.Color("Escenario:N", scale=alt.Scale(range=[CACAO, TERRACOTA, PETROL]), legend=None),
+            tooltip=[
+                alt.Tooltip("Escenario:N", title="Configuración"),
+                alt.Tooltip("tiempo_total_medio_ms:Q", title="Tiempo total (ms)", format=".2f"),
+                alt.Tooltip("memoria_pico_media_kb:Q", title="RAM pico (KB)", format=".1f"),
+                alt.Tooltip("disco_total_kb:Q", title="Disco (KB)", format=".1f"),
+            ],
+        ).properties(height=250)
+        st.altair_chart(estilo_altair(graf_opt), width="stretch")
+
+    with co2:
+        r_plot = retro_psp_e3.copy()
+        r_plot["Etapa"] = r_plot["etapa"].str.replace("_", " ")
+        graf_psp = alt.Chart(r_plot, title="Retrospectiva PSP (E0 → E3): Exactitud de Tiempo y Yield (%)").mark_line(
+            point=alt.OverlayMarkDef(size=80, filled=True), strokeWidth=2.6
+        ).encode(
+            x=alt.X("Etapa:N", sort=r_plot["Etapa"].tolist(), title=None),
+            y=alt.Y("yield_revision_pct:Q", title="Yield de revisión temprana (%)", scale=alt.Scale(domain=[0, 108])),
+            color=alt.value(TERRACOTA),
+            tooltip=[
+                alt.Tooltip("Etapa:N", title="Etapa"),
+                alt.Tooltip("horas_reales_netas:Q", title="Horas netas"),
+                alt.Tooltip("exactitud_estimacion_pct:Q", title="Exactitud estimación (%)"),
+                alt.Tooltip("yield_revision_pct:Q", title="Yield revisión (%)"),
+                alt.Tooltip("tiempo_medio_correccion_min:Q", title="Minutos/defecto"),
+            ],
+        ).properties(height=250)
+        st.altair_chart(estilo_altair(graf_psp), width="stretch")
+
+    with st.expander("Ver cierre de auditoría (5/5 hallazgos cerrados), autoevaluación MoProSoft/CMMI y retrospectiva PSP"):
+        st.markdown("**1. Cierre formal de hallazgos de auditoría (0 críticos abiertos)**")
+        st.dataframe(cierre_aud_e3, hide_index=True, width="stretch")
+        st.markdown("**2. Autoevaluación del observatorio frente a MoProSoft (NMX-I-059-NYCE) y CMMI v2.0**")
+        st.dataframe(auto_modelos_e3, hide_index=True, width="stretch")
+        st.markdown("**3. Tabla comparativa de los 5 modelos normativos (ISO 9001, MoProSoft, SPICE, CMMI y PSP/TSP)**")
+        st.dataframe(comp_modelos_proc_e3, hide_index=True, width="stretch")
+        st.markdown("**4. Evolución PSP por etapa (E0 a E3)**")
+        st.dataframe(retro_psp_e3, hide_index=True, width="stretch")
+        st.image(str(FIGURAS_E3_DIR / "fig4_optimizacion_pipeline_antes_despues_e3.png"), width="stretch")
+        st.image(str(FIGURAS_E3_DIR / "fig5_retrospectiva_psp_modelos_y_sello_tdl_e3.png"), width="stretch")
 
     # 1. Ética de las 3 fuentes
     e1c, e2c, e3c = st.columns(3)

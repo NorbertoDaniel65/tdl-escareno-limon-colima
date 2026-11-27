@@ -1,0 +1,9 @@
+componente,orden,nombre_negocio,eigenvalor_lambda,varianza_explicada_pct,varianza_acumulada_pct,cumple_kaiser_lambda_mayor_1,interpretacion_negocio
+PC1,1,Índice de Estrés Termo-Evaporativo y Calor Citrícola,2.8862,36.08,36.08,True,"Sintetiza el calor extremo (T. máx, GDD y días ≥35°C) y la sed atmosférica (ET0 y radiación). Valores altos (primavera en Colima y Tecomán) aceleran floración pero exigen riego intensivo y anticipan escasez 6–8 semanas después."
+PC2,2,Índice de Humedad Pluvial Tropical y Moderación Costera,2.38,29.75,65.83,True,Captura el temporal de lluvias de verano–otoño (precipitación acumulada y noches cálidas-húmedas). Valores positivos altos corresponden a meses húmedos de cosecha pico (julio–octubre) donde baja el precio mayorista.
+PC3,3,Índice de Turbulencia Eólica Costera vs. Valle Interior,1.0849,13.56,79.39,True,Separa la dinámica marítima de Manzanillo y Armería (ráfagas costeras del Pacífico y menor amplitud térmica) frente al Valle interior de Colima y Tecomán.
+PC4,4,Índice de Insolación Invernal Despejada,0.8353,10.44,89.83,False,Contrasta meses secos de alta radiación solar invernal frente a días nublados con viento moderado.
+PC5,5,Índice de Anomalía Térmica Nocturna,0.5227,6.53,96.36,False,Variación residual en temperatura mínima respecto a los días de calor extremo.
+PC6,6,Índice Residual de Ráfagas Secas,0.2496,3.12,99.48,False,Variación menor entre radiación media y ráfagas de viento.
+PC7,7,Componente Subdominante de Balance Radiativo,0.0336,0.42,99.91,False,Ruido subdominante entre temperatura máxima y acumulación de grados-día.
+PC8,8,Componente Residual de Acoplamiento Térmico,0.0076,0.09,100.0,False,"Colinealidad fina entre temperatura máxima, mínima y GDD."

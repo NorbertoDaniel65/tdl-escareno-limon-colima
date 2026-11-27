@@ -1,0 +1,238 @@
+{
+  "fecha_evaluacion_utc": "2026-11-27T23:07:40.663061+00:00",
+  "sello_tdl_otorgado": true,
+  "criterios_sello_cumplidos": "6/6",
+  "cierre_auditoria": {
+    "total_hallazgos": 5,
+    "hallazgos_cerrados": 5,
+    "criticos_abiertos": 0,
+    "mayores_abiertos": 0,
+    "menores_abiertos": 0
+  },
+  "modelos_proceso": {
+    "nivel_moprosoft_alcanzado": "Nivel 3 · Definido",
+    "nivel_cmmi_alcanzado": "Nivel de Madurez 3 · Definido (con prácticas Nivel 4 en CAR/DOE)",
+    "modelos_comparados": [
+      "ISO 9001:2015",
+      "MoProSoft (NMX-I-059-NYCE)",
+      "SPICE (ISO/IEC 15504 -> ISO/IEC 33000)",
+      "CMMI v2.0",
+      "PSP / TSP (Personal & Team Software Process)"
+    ]
+  },
+  "retrospectiva_psp": {
+    "total_sesiones_e0_e3": 22,
+    "tiempo_total_neto_min": 2725,
+    "tiempo_total_neto_horas": 45.42,
+    "total_defectos_e0_e3": 13,
+    "defectos_cerrados_pct": 100.0,
+    "evolucion_error_estimacion_pct": {
+      "E0_Arranque": 18.52,
+      "E1_Plata_Pronostico": 1.67,
+      "E2_Experimento_ISO": 3.17,
+      "E3_Multivariado_Sello": 1.85
+    },
+    "evolucion_yield_revision_pct": {
+      "E0_Arranque": 25.0,
+      "E1_Plata_Pronostico": 0.0,
+      "E2_Experimento_ISO": 33.33,
+      "E3_Multivariado_Sello": 100.0
+    },
+    "evolucion_tiempo_correccion_min": {
+      "E0_Arranque": 14.25,
+      "E1_Plata_Pronostico": 16.0,
+      "E2_Experimento_ISO": 13.67,
+      "E3_Multivariado_Sello": 10.67
+    },
+    "resumen_por_etapa": [
+      {
+        "etapa": "E0_Arranque",
+        "sesiones_registradas": 6,
+        "tiempo_planeado_min": 540,
+        "tiempo_real_neto_min": 640,
+        "horas_reales_netas": 10.67,
+        "error_estimacion_tiempo_pct": 18.52,
+        "exactitud_estimacion_pct": 81.48,
+        "defectos_totales_etapa": 4,
+        "eliminados_en_revision_temprana": 1,
+        "eliminados_en_pruebas": 3,
+        "yield_revision_pct": 25.0,
+        "minutos_correccion_totales": 57,
+        "tiempo_medio_correccion_min": 14.25,
+        "defectos_por_10_horas": 3.75
+      },
+      {
+        "etapa": "E1_Plata_Pronostico",
+        "sesiones_registradas": 5,
+        "tiempo_planeado_min": 600,
+        "tiempo_real_neto_min": 610,
+        "horas_reales_netas": 10.17,
+        "error_estimacion_tiempo_pct": 1.67,
+        "exactitud_estimacion_pct": 98.33,
+        "defectos_totales_etapa": 3,
+        "eliminados_en_revision_temprana": 0,
+        "eliminados_en_pruebas": 3,
+        "yield_revision_pct": 0.0,
+        "minutos_correccion_totales": 48,
+        "tiempo_medio_correccion_min": 16.0,
+        "defectos_por_10_horas": 2.95
+      },
+      {
+        "etapa": "E2_Experimento_ISO",
+        "sesiones_registradas": 5,
+        "tiempo_planeado_min": 630,
+        "tiempo_real_neto_min": 650,
+        "horas_reales_netas": 10.83,
+        "error_estimacion_tiempo_pct": 3.17,
+        "exactitud_estimacion_pct": 96.83,
+        "defectos_totales_etapa": 3,
+        "eliminados_en_revision_temprana": 1,
+        "eliminados_en_pruebas": 2,
+        "yield_revision_pct": 33.33,
+        "minutos_correccion_totales": 41,
+        "tiempo_medio_correccion_min": 13.67,
+        "defectos_por_10_horas": 2.77
+      },
+      {
+        "etapa": "E3_Multivariado_Sello",
+        "sesiones_registradas": 6,
+        "tiempo_planeado_min": 810,
+        "tiempo_real_neto_min": 825,
+        "horas_reales_netas": 13.75,
+        "error_estimacion_tiempo_pct": 1.85,
+        "exactitud_estimacion_pct": 98.15,
+        "defectos_totales_etapa": 3,
+        "eliminados_en_revision_temprana": 3,
+        "eliminados_en_pruebas": 0,
+        "yield_revision_pct": 100.0,
+        "minutos_correccion_totales": 32,
+        "tiempo_medio_correccion_min": 10.67,
+        "defectos_por_10_horas": 2.18
+      }
+    ],
+    "resumen_por_fase": [
+      {
+        "fase_psp": "planeacion",
+        "minutos_dedicados": 285,
+        "horas_dedicadas": 4.75,
+        "pct_tiempo_total": 10.46,
+        "defectos_inyectados": 0,
+        "pct_defectos_inyectados": 0.0,
+        "defectos_eliminados": 0,
+        "pct_defectos_eliminados": 0.0
+      },
+      {
+        "fase_psp": "diseno",
+        "minutos_dedicados": 340,
+        "horas_dedicadas": 5.67,
+        "pct_tiempo_total": 12.48,
+        "defectos_inyectados": 4,
+        "pct_defectos_inyectados": 30.77,
+        "defectos_eliminados": 0,
+        "pct_defectos_eliminados": 0.0
+      },
+      {
+        "fase_psp": "codigo",
+        "minutos_dedicados": 1265,
+        "horas_dedicadas": 21.08,
+        "pct_tiempo_total": 46.42,
+        "defectos_inyectados": 8,
+        "pct_defectos_inyectados": 61.54,
+        "defectos_eliminados": 0,
+        "pct_defectos_eliminados": 0.0
+      },
+      {
+        "fase_psp": "revision",
+        "minutos_dedicados": 345,
+        "horas_dedicadas": 5.75,
+        "pct_tiempo_total": 12.66,
+        "defectos_inyectados": 0,
+        "pct_defectos_inyectados": 0.0,
+        "defectos_eliminados": 5,
+        "pct_defectos_eliminados": 38.46
+      },
+      {
+        "fase_psp": "pruebas",
+        "minutos_dedicados": 490,
+        "horas_dedicadas": 8.17,
+        "pct_tiempo_total": 17.98,
+        "defectos_inyectados": 1,
+        "pct_defectos_inyectados": 7.69,
+        "defectos_eliminados": 8,
+        "pct_defectos_eliminados": 61.54
+      }
+    ]
+  },
+  "disponibilidad_14_dias": {
+    "ventana_evaluada": "Últimos 14 días (2026-11-14 a 2026-11-27 · 336 horas)",
+    "operaciones_programadas_14d": 26,
+    "operaciones_exitosas_14d": 24,
+    "incidentes_transitorios_14d": 2,
+    "mtbf_14d_horas": 167.75,
+    "mttr_14d_horas": 0.25,
+    "disponibilidad_real_14d_pct": 99.85,
+    "tasa_exito_post_parche_aud01_19_27_nov_pct": 100.0,
+    "operaciones_post_parche_aud01": "18/18"
+  },
+  "seguridad_repositorio": {
+    "archivos_auditados": 208,
+    "secretos_expuestos": 0,
+    "archivos_con_secretos": []
+  },
+  "tabla_sello_tdl": [
+    {
+      "id_criterio": "SELLO-01",
+      "criterio_sello_tdl": "Disponibilidad medida de la captura",
+      "umbral_minimo_oficial": "≥ 95% en los últimos 14 días",
+      "resultado_medido_observatorio": "99.85% disponibilidad A = MTBF/(MTBF+MTTR) en 336 h (100.0% éxito en las 18/18 corridas post-parche AUD-01)",
+      "valor_numerico": 99.85,
+      "cumple": true,
+      "evidencia_verificable": "calidad/bitacora_capturas.jsonl | .github/workflows/captura-bronce.yml"
+    },
+    {
+      "id_criterio": "SELLO-02",
+      "criterio_sello_tdl": "Completitud de la Capa Oro (ISO/IEC 25012)",
+      "umbral_minimo_oficial": "≥ 95%",
+      "resultado_medido_observatorio": "100.0% (29,560/29,560 celdas válidas, 0 valores nulos)",
+      "valor_numerico": 100.0,
+      "cumple": true,
+      "evidencia_verificable": "data/oro/CITRO_DATA_LAB_COLIMA_DATASET_ORO_v1.parquet | data/oro/evaluacion_iso_25012_e2.csv"
+    },
+    {
+      "id_criterio": "SELLO-03",
+      "criterio_sello_tdl": "Cobertura de pruebas automáticas",
+      "umbral_minimo_oficial": "≥ 60%",
+      "resultado_medido_observatorio": "88.4% cobertura sobre módulos core (35 pruebas automatizadas pytest en CI)",
+      "valor_numerico": 88.4,
+      "cumple": true,
+      "evidencia_verificable": "tests/ | .github/workflows/ci-calidad.yml"
+    },
+    {
+      "id_criterio": "SELLO-04",
+      "criterio_sello_tdl": "Secretos expuestos en el repositorio",
+      "umbral_minimo_oficial": "0",
+      "resultado_medido_observatorio": "0 secretos expuestos en 208 archivos auditados + 0 PII",
+      "valor_numerico": 0.0,
+      "cumple": true,
+      "evidencia_verificable": "pipeline/calidad_sello_e3.py | docs/etica-datos.md"
+    },
+    {
+      "id_criterio": "SELLO-05",
+      "criterio_sello_tdl": "Hallazgos críticos de auditoría abiertos",
+      "umbral_minimo_oficial": "0",
+      "resultado_medido_observatorio": "0 críticos abiertos y 0 mayores/menores abiertos (5/5 hallazgos AUD-01..AUD-05 cerrados con evidencia)",
+      "valor_numerico": 0.0,
+      "cumple": true,
+      "evidencia_verificable": "data/oro/cierre_auditoria_e3.csv | docs/calidad-modelos-psp-sello-e3.md"
+    },
+    {
+      "id_criterio": "SELLO-06",
+      "criterio_sello_tdl": "Reproducibilidad",
+      "umbral_minimo_oficial": "Un tercero clona el repositorio y obtiene los mismos resultados",
+      "resultado_medido_observatorio": "100% determinista (semilla=23460323, verificadores verificar_e0..e3.py y CI multi-OS en verde)",
+      "valor_numerico": 100.0,
+      "cumple": true,
+      "evidencia_verificable": "pipeline/verificar_e0.py .. pipeline/verificar_e3.py | README.md"
+    }
+  ]
+}

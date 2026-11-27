@@ -1,4 +1,4 @@
-name: CI Calidad, Puerta de Datos y Verificación E0-E2
+name: CI Calidad, Puerta de Datos y Verificación E0-E3
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   verificar-calidad:
-    name: Puerta de Calidad, Pruebas Pytest y Verificadores E0-E2
+    name: Puerta de Calidad, Pruebas Pytest y Verificadores E0-E3
     runs-on: ubuntu-latest
 
     steps:
@@ -31,13 +31,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Ejecutar Puerta de Calidad y Verificadores Deterministas (E0 + E1 + E2)
+      - name: Ejecutar Puerta de Calidad y Verificadores Deterministas (E0 + E1 + E2 + E3)
         run: |
           python -m pipeline.puerta_calidad
           python -m pipeline.verificar_e0
           python -m pipeline.verificar_e1
           python -m pipeline.verificar_e2
+          python -m pipeline.verificar_e3
 
-      - name: Ejecutar Suite Completa de Pruebas Automatizadas (E0 + E1 + E2)
+      - name: Ejecutar Suite Completa de Pruebas Automatizadas (E0 + E1 + E2 + E3)
         run: |
           pytest -v

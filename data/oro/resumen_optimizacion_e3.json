@@ -1,0 +1,84 @@
+{
+  "fecha_ejecucion_utc": "2026-11-27T22:45:06.005447+00:00",
+  "semilla_reproducibilidad": 23460323,
+  "n_replicas_benchmark": 10,
+  "configuracion_antes_e1": {
+    "concurrencia_io": "1 hilo secuencial",
+    "validacion_puerta": "Iterativa fila a fila en Python",
+    "persistencia": "CSV UTF-8",
+    "tiempo_total_medio_ms": 4253.176,
+    "tiempo_total_std_ms": 292.895,
+    "tiempo_io_medio_ms": 133.068,
+    "tiempo_validacion_medio_ms": 2325.095,
+    "tiempo_transformacion_medio_ms": 120.061,
+    "tiempo_escritura_medio_ms": 1674.901,
+    "memoria_pico_media_kb": 22936.72,
+    "memoria_pico_media_mb": 22.399,
+    "disco_total_kb": 1062.481
+  },
+  "configuracion_despues_e3_snappy": {
+    "concurrencia_io": "ThreadPoolExecutor (4 hilos por dominio)",
+    "validacion_puerta": "Vectorizada NumPy + Pandera DataFrameSchema (pandera.pandas)",
+    "persistencia": "Apache Parquet (Snappy)",
+    "tiempo_total_medio_ms": 349.933,
+    "tiempo_total_std_ms": 33.893,
+    "tiempo_io_medio_ms": 112.205,
+    "tiempo_validacion_medio_ms": 57.069,
+    "tiempo_transformacion_medio_ms": 111.907,
+    "tiempo_escritura_medio_ms": 68.746,
+    "memoria_pico_media_kb": 3476.8,
+    "memoria_pico_media_mb": 3.395,
+    "disco_total_kb": 154.276
+  },
+  "configuracion_despues_e3_zstd": {
+    "persistencia": "Apache Parquet (ZSTD nivel estándar)",
+    "tiempo_total_medio_ms": 456.114,
+    "tiempo_total_std_ms": 362.23,
+    "memoria_pico_media_kb": 3475.689,
+    "disco_total_kb": 134.878
+  },
+  "mejoras_cuantificadas": {
+    "reduccion_tiempo_total_pct": 91.77,
+    "factor_aceleracion_speedup": 12.15,
+    "reduccion_tiempo_validacion_pct": 97.55,
+    "reduccion_tiempo_escritura_pct": 95.9,
+    "reduccion_memoria_pico_pct": 84.84,
+    "reduccion_disco_snappy_pct": 85.48,
+    "reduccion_disco_zstd_pct": 87.31,
+    "factor_compresion_disco_zstd": 7.88,
+    "welch_t_stat": 41.8625,
+    "welch_p_valor": 7.456975826229038e-12,
+    "tasa_error_corrupcion_pct": 0.0,
+    "completitud_capa_oro_pct": 100.0,
+    "trazabilidad_linaje_oro_pct": 100.0
+  },
+  "tablas_oro_parquet": [
+    {
+      "tabla": "serie_mensual_oro_60m",
+      "filas": 60,
+      "columnas": 35,
+      "csv_kb": 31.6,
+      "parquet_zstd_kb": 32.74,
+      "reduccion_disco_pct": -3.62,
+      "sha256_parquet": "7a21331cdb0c5deaf4a9ca111e2013dd3f5d24cc94b03cbdde050b7a2d8350a1"
+    },
+    {
+      "tabla": "panel_integrado_municipio_mercado_oro",
+      "filas": 240,
+      "columnas": 49,
+      "csv_kb": 195.05,
+      "parquet_zstd_kb": 61.08,
+      "reduccion_disco_pct": 68.68,
+      "sha256_parquet": "aff3966af24db9b5cddd763c32c948b0032f4fc2579a7a78058138c11e24bef2"
+    },
+    {
+      "tabla": "perfil_geoespacial_municipios_oro",
+      "filas": 10,
+      "columnas": 34,
+      "csv_kb": 5.51,
+      "parquet_zstd_kb": 24.72,
+      "reduccion_disco_pct": -348.86,
+      "sha256_parquet": "06896f88d90f6bbdb03eafa985fe57afdd7154dbb8af5c58af35c20c4d453633"
+    }
+  ]
+}

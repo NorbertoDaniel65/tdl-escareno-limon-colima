@@ -1,6 +1,6 @@
 {
   "version_esquema_linaje": "TDL-Lineage-2.0",
-  "generado_en_utc": "2026-11-22T16:28:55.545694+00:00",
+  "generado_en_utc": "2026-11-27T22:50:12.876927+00:00",
   "politica_trazabilidad": "100% de los registros de Capa Oro poseen ID de linaje, archivo(s) de Capa Bronce, huella SHA-256 y fecha de ingesta UTC.",
   "cobertura_trazabilidad_pct": 100.0,
   "total_registros_oro_rastreados": 310,

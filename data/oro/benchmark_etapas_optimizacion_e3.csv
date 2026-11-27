@@ -1,0 +1,4 @@
+escenario,n_corridas,tiempo_io_medio_ms,tiempo_validacion_medio_ms,tiempo_transformacion_medio_ms,tiempo_escritura_medio_ms,tiempo_total_medio_ms,tiempo_total_std_ms,memoria_pico_media_kb,memoria_pico_media_mb,disco_total_kb,registros_validados,registros_rechazados
+1_Antes_Linea_Base_E1_CSV,10,133.068,2325.095,120.061,1674.901,4253.176,292.895,22936.72,22.399,1062.481,7304,0
+2_Despues_Optimizado_E3_Parquet_Snappy,10,112.205,57.069,111.907,68.746,349.933,33.893,3476.8,3.395,154.276,7304,0
+3_Despues_Optimizado_E3_Parquet_ZSTD,10,107.756,53.941,180.06,114.344,456.114,362.23,3475.689,3.394,134.878,7304,0

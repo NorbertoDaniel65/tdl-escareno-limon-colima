@@ -1,0 +1,6 @@
+fase_psp,minutos_dedicados,horas_dedicadas,pct_tiempo_total,defectos_inyectados,pct_defectos_inyectados,defectos_eliminados,pct_defectos_eliminados
+planeacion,285,4.75,10.46,0,0.0,0,0.0
+diseno,340,5.67,12.48,4,30.77,0,0.0
+codigo,1265,21.08,46.42,8,61.54,0,0.0
+revision,345,5.75,12.66,0,0.0,5,38.46
+pruebas,490,8.17,17.98,1,7.69,8,61.54

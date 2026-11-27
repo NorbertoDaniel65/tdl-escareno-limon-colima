@@ -1,0 +1,5 @@
+id_municipio,municipio,zona,n_meses,PC1_media,PC2_media,PC3_media,temp_max_media,temp_min_media,precip_media_mm,et0_media_mm,dias_35c_medios,viento_max_medio
+6001,Armeria,Corredor Costero,60,-0.008,-0.345,-0.319,30.752,21.001,97.06,131.61,0.333,17.493
+6002,Colima,Valle Central,60,0.99,0.224,-0.617,32.128,19.866,122.952,141.617,3.717,19.263
+6007,Manzanillo,Costa Portuaria,60,-0.499,0.152,0.422,29.867,22.612,71.513,133.515,0.0,21.387
+6009,Tecoman,Valle Citricola Sur,60,-0.483,-0.032,0.513,29.832,22.03,81.478,130.578,0.05,22.103
